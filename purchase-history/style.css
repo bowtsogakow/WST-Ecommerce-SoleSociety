@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+  }
+  
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+
+    font-family: Arial, Helvetica, sans-serif;
+    padding-inline: 10%;
+    padding-block: 2rem;
+}
+  
+img {
+    display: block;
+    max-width: 100%;
+}
+
+:root{
+    --orange: #EB5E28;
+}
+
+.title{
+    display: flex;
+    gap: 1rem;
+    color: var(--orange);
+    align-items: center;
+    margin-block: 2rem;
+}
+.title img{
+    padding: 0.5rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--orange);
+    border-radius: 100%;
+}
+
+.border{
+    padding: 1px;
+    background-image: linear-gradient(to right, black, var(--orange));
+    border-radius: 1rem;
+}
+
+.purchaseHistory-table{
+    border-radius: 0.9rem;
+    width: 100%;
+    height: 1000px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+
+.topMenu{
+    display: flex;
+    padding: 1rem;
+    padding-top: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+#searchBar{
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    padding-inline: 1rem;
+    align-items: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--orange);
+    border-radius: 1rem;
+    width: 40%;
+}
+#searchBar input{
+    width: 100%;
+    border-style: none;
+    outline: none;
+}
+.filter div{
+    align-items: center;
+    padding: 0.3rem;
+    padding-inline: 1rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--orange);
+    border-radius: 1rem;
+}
+.pages{
+    gap: 2rem;
+}
+.filter, .pages-button,
+.pages-all{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.label{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 1rem;
+    justify-content: space-between;
+    background-color: #EDA98F;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+.label p{
+    color: white;
+    font-weight: bold;
+}
+
+.purchaseHistory-list ol{
+    list-style: none;
+    padding: 0;
+}
+.purchaseHistory-list ol li{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 1rem;
+    justify-content: space-between;
+    background-color: #F8F4ED;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
