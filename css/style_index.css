@@ -14,7 +14,7 @@ html {
 }
 
 body{
-  background-color: #FFFCF2;
+  
   font-family: 'Poppins', system-ui,'Segoe UI',  'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
 }
@@ -32,7 +32,9 @@ header .row{
   header {
     padding: 10px 40px;
     background-image: linear-gradient(to right,#252422 , #EB5E28);
-    
+    z-index: 1;
+    position: fixed;
+    width: 100%;
   }
   header .flex {
     gap: 20px;
@@ -104,7 +106,7 @@ header .row{
     right: 2.1rem;
     top: 60px;
     height: 0;
-    width: 200px;
+    width: 300px;
     background: rgba(12, 12, 12, 0.1);
     backdrop-filter: blur(15px);
     border-radius: 5px;
@@ -122,11 +124,9 @@ header .row{
     justify-content: center;
   }
  
- 
-
   /*SECTION HERO | SLIDESHOW */
   section.hero{
-    padding:20px;
+    padding-top:70px;
     background-image: linear-gradient(to right,#252422 , #EB5E28);
   }
 section.hero .container{
@@ -139,6 +139,7 @@ section.hero  .slideshow {
   position: relative;
   margin: auto;
   overflow: hidden;
+  margin-top: 20px;
 }
 section.hero .back, .next {
   cursor: pointer;
@@ -230,9 +231,6 @@ header .flex .search img {
   top: 9px;
   left: 98px;
 }
-main , header {
-  padding: 10px 20px;
-}
 header .link .menu-icon{
   display: block;
  }
@@ -252,8 +250,12 @@ header .row{
 
 /* PRODUCT SLIDE | SCROLL*/
 section.scroll_product {
-  background-color: #a47575;
-}
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 50px 0px 100px 0px;
+  background-color: #252422;
+} 
 section.scroll_product  .container{
   max-width: 1440px;
   margin: 0 auto;
@@ -269,7 +271,9 @@ section.scroll_product .container{
  
 }
  section.scroll_product .product-heading{
-  color: #EB5E28;
+  color: #FFFCF2;
+ text-transform: uppercase;
+ margin-bottom: 20px;
 }
  .feature-products {
   height: 320px;
@@ -286,12 +290,21 @@ section.scroll_product .container{
 .product-categories {
   height: 320px;
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 1rem;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   white-space: nowrap;
 }
+::-webkit-scrollbar {
+background-color: #000;
+width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background:#e1774d;
+  width: 10px;
+}
+
 section.scroll_product .product-brands {
   height: 320px;
   display: grid;
@@ -352,9 +365,10 @@ section.scroll_product .product-price{
 }
 
 /* FOOTER */
-footer .container{
+footer {
   background-color: #000;
-  height: 100px;
+  height: 200px;
+
 
 }
 
