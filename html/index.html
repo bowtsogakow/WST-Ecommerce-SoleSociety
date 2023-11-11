@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" 
 rel="stylesheet">
   <link rel="stylesheet" href="../css/style_index.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="../image/icons/logo.jpg" >
+  <link rel="icon" type="image/png" sizes="32x32" href="../image/icons/logo2.png" >
   
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -20,38 +20,79 @@ rel="stylesheet">
   <title>Sole Society</title>
 </head>
 <body>
-  <header  >
-    <div class="container">
-      <div class="row">
-        <div class="flex">
-         <div class="logo">
-          <h1>LOGO</h1>
-         </div>
-           <div class="search">
-            <form>
-              <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
-              placeholder="Search products here" autocomplete="off" spellcheck="false">
-            </form>
+  <header>
+    <section class="first_header">
+      <div class="container">
+        <div class="row">
+          <div class="flex">
+           <div class="logo">
+            <img src="../image/icons/logo2.png" alt="">
            </div>
-        </div>
-        <div class="link">
+             <div class="search">
+              <form>
+                <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
+                placeholder="Search products here" autocomplete="off" spellcheck="false">
+              </form>
+             </div>
+          </div>
+          <div class="link">
+            <ul>
+              <li><a href="">Sign up</a></li>
+              <li><a href="">Log in</a></li>
+             </ul>
+             <div class="menu-icon" id="menuIcon">
+              <i class='bx bx-menu bx-md'></i>
+             </div>
+          </div>
+          </div>
+         </div>
+         <div class="dropdown_menu" id="dropDownMenu">
           <ul>
             <li><a href="">Sign up</a></li>
             <li><a href="">Log in</a></li>
            </ul>
-           <div class="menu-icon" id="menuIcon">
-            <i class='bx bx-menu bx-md'></i>
+         </div>
+    </section>
+
+    <section class="Hidden_header">
+      <div class="container">
+        <div class="row">
+          <div class="flex">
+           <div class="logo">
+            <img src="../image/icons/logo1.png" alt="">
            </div>
-        </div>
-        </div>
-       </div>
-       <div class="dropdown_menu" id="dropDownMenu">
-        <ul>
-          <li><a href="">Sign up</a></li>
-          <li><a href="">Log in</a></li>
-         </ul>
-       </div>
+             <div class="search">
+              <form>
+                <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
+                placeholder="Search products here" autocomplete="off" spellcheck="false">
+              </form>
+             </div>
+          </div>
+          <div class="link">
+            <ul>
+              <li><a href="">Shop</a></li>
+              <li><a href="">Cart</a></li>
+              <li><a href="">Foverite</a></li>
+              <li><a href="">Account</a></li>
+             </ul>
+             <div class="menu-icon" id="menuIcon">
+              <i class='bx bx-menu bx-md'></i>
+             </div>
+          </div>
+          </div>
+         </div>
+         <div class="dropdown_menu" id="dropDownMenu">
+          <ul>
+              <li><a href="">Shop</a></li>
+              <li><a href="">Cart</a></li>
+              <li><a href="">Foverite</a></li>
+              <li><a href="">Account</a></li>
+           </ul>
+         </div>
+    </section>
  </header>
+
+ 
 <main>
   <section class="hero">
     <div class="container">
@@ -65,6 +106,12 @@ rel="stylesheet">
           </div>
           <div class="mySlides fade">
             <img src="../image/posters/poster3.jpg" style="width:100%;">
+          </div>
+          <div class="mySlides fade">
+            <img src="../image/posters/poster4.jpg" style="width:100%;">
+          </div>
+          <div class="mySlides fade">
+            <img src="../image/posters/poster5.jpg" style="width:100%;">
           </div>
           <a class="back" onclick="plusSlides(-1)">❮</a>
           <a class="next"  onclick="plusSlides(1)">❯</a>
@@ -84,7 +131,7 @@ rel="stylesheet">
             <div class="feature-products ">
               <div class="product">
               <div class="product-image">
-             <img src="../image/Dior/B25Runnerneaker.png" alt="">
+             <a href=""><img src="../image/Dior/B25Runnerneaker.png" alt=""></a>
               </div>
               <div class="product-name ">
               <p>B25 Runner neaker</p>
@@ -98,7 +145,7 @@ rel="stylesheet">
             </div>
             <div class="product">
               <div class="product-image">
-               <img src="../image/adidas/CENTENNIAL_85_LOW_SHOES.png "alt="">
+               <a href=""><img src="../image/adidas/CENTENNIAL_85_LOW_SHOES.png "alt=""></a>
               </div>
               <div class="product-name">
                <p>Centennial 85 Low Shoes </p>
@@ -112,7 +159,7 @@ rel="stylesheet">
             </div>
             <div class="product">
               <div class="product-image">
-                <img src="../image/newbalance/2002R__Eclipse.png" alt="">
+                <a href=""><img src="../image/newbalance/2002R__Eclipse.png" alt=""></a>
               </div>
               <div class="product-name">
                 <p>2002R 'Eclipse'</p>
@@ -126,7 +173,7 @@ rel="stylesheet">
             </div>
             <div class="product">
               <div class="product-image">
-                <img src="../image/vans/sk8hi.png" alt="">
+                <a href=""><img src="../image/vans/sk8hi.png" alt=""></a>
               </div>
               <div class="product-name">
                 <p>Sk8-Hi Shoe</p>
@@ -140,7 +187,7 @@ rel="stylesheet">
             </div>
             <div class="product">
               <div class="product-image">
-               <img src="../image/nike/Nike_Air_Max_97.png" alt="">
+               <a href=""><img src="../image/nike/Nike_Air_Max_97.png" alt=""></a>
               </div>
               <div class="product-name">
                 <p>Nike Air Max 97</p>
@@ -154,7 +201,7 @@ rel="stylesheet">
             </div>
             <div class="product">
               <div class="product-image">
-              <img src="../image/reebok/ReebokNanoX3.png" alt="">
+              <a href=""><img src="../image/reebok/ReebokNanoX3.png" alt=""></a>
               </div>
               <div class="product-name">
                 <p>Reebok Nano X3</p>
@@ -168,7 +215,7 @@ rel="stylesheet">
             </div>
             <div class="product">
               <div class="product-image">
-                <img src="../image/Converse/Chuck_70.png" alt="">
+                <a href=""><img src="../image/Converse/Chuck_70.png" alt=""></a>
               </div>
               <div class="product-name">
                 <p>Chuck 70 </p>
@@ -189,7 +236,7 @@ rel="stylesheet">
             <div class="product-categories ">
              <div class="product">
                 <div class="product-image">
-               <img src="../image/categories/men.jpg" alt="">
+              <a href=""> <img src="../image/categories/men.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
                   <p>Nike</p>
@@ -198,7 +245,7 @@ rel="stylesheet">
         
               <div class="product">
                 <div class="product-image">
-                 <img src="../image//categories/women.jpg" alt="">
+                 <a href=""><img src="../image//categories/women.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
                <p>Women</p>
@@ -207,7 +254,7 @@ rel="stylesheet">
         
               <div class="product">
                 <div class="product-image">
-                 <img src="../image/categories/kids.jpg" alt="">
+                <a href=""> <img src="../image/categories/kids.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
                <p>Kids</p>
@@ -215,7 +262,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                 <img src="../image/categories/running.jpg" alt="">
+                 <a href=""><img src="../image/categories/running.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
                  <p>Running</p>
@@ -223,7 +270,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                 <img src="../image/categories/basketball.jpg" alt="">
+                <a href=""> <img src="../image/categories/basketball.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
                  <p>Basketball</p>
@@ -232,7 +279,7 @@ rel="stylesheet">
               
               <div class="product">
                 <div class="product-image">
-                  <img src="../image/categories/aesthetic.jpg" alt="">
+                  <a href=""><img src="../image/categories/aesthetic.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
                  <p>Asthetic</p>
@@ -240,7 +287,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-              <img src="../image/categories/skateboarding.jpg" alt="">
+              <a href=""><img src="../image/categories/skateboarding.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
                  <p>Skateboarding</p>
@@ -252,7 +299,7 @@ rel="stylesheet">
             <div class="product-brands ">
               <div class="product">
                 <div class="product-image">
-                  <img src="../image/brands/Adidas.png" alt="">
+                  <a href=""><img src="../image/brands/Adidas.png" alt=""></a>
                 </div>
                 <div class="product-name">
                   <p>Adidas</p>
@@ -260,7 +307,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                  <img src="../image/brands/Dior.png" alt="">
+                  <a href=""><img src="../image/brands/Dior.png" alt=""></a>
                 </div>
                 <div class="product-name">
                   <p>Dior</p>
@@ -268,7 +315,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                  <img src="../image/brands/Converse.png" alt="">
+                  <a href=""><img src="../image/brands/Converse.png" alt=""></a>
                 </div>
                 <div class="product-name">
                 <p>Converse</p>
@@ -276,7 +323,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                 <img src="../image/brands/New-Balance.png" alt="">
+                 <a href=""><img src="../image/brands/New-Balance.png" alt=""></a>
                 </div>
                 <div class="product-name">
                  <p>New Balance</p>
@@ -284,7 +331,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                 <img src="../image//brands/nike.png" alt="">
+                <a href=""> <img src="../image//brands/nike.png" alt=""></a>
                 </div>
                 <div class="product-name">
                  <p>Nike</p>
@@ -292,7 +339,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                  <img src="../image/brands/Reebok.png" alt="">
+                  <a href=""><img src="../image/brands/Reebok.png" alt=""></a>
                 </div>
                 <div class="product-name">
                   <p>Reebok</p>
@@ -300,7 +347,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                   <img src="../image/brands/vans.png" alt="">
+                   <a href=""><img src="../image/brands/vans.png" alt=""></a>
                 </div>
                 <div class="product-name">
                   <p>Vans</p>
@@ -315,7 +362,75 @@ rel="stylesheet">
 
   <footer>
     <div class="container">
-      footer
+      <div class="row">
+         <div class="logo">
+       <a href=""> <img src="../image/icons/logo1.png" alt=""></a>
+         </div>
+         <div class="links">
+          <div class="link">
+            <div class="about_us">
+              <div class="">
+                <h2 class="footer-heading">About Us</h2>
+             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, reprehenderit!</p>
+              </div>
+             <div class="link">
+              <div class="contact_us">
+              <h2 class="footer-heading">Contact Us</h2>
+              <div class="phone">
+                <img src="../image/icons/icon-phone.svg" alt="">
+               <a href="">Phone: +1-543-123-4567</a>
+             </div>
+             <div class="email">
+               <img src="../image/icons/icon-email.svg" alt="">
+             <a href=""> example@fylo.com</a>
+            </div>
+           </div>
+          </div>
+        </div>
+          </div>
+
+          <div class="link">
+            <div class="information">
+              <h2 class="footer-heading">information</h2>
+              <li><a href="">About Us</a></li>
+              <li><a href="">More Search</a></li>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Testimonals</a></li>
+              <li><a href="">Events</a></li>
+            </div>
+          </div>
+
+          <div class="link">
+            <div class="helpful-links">
+              <h2 class="footer-heading">helpful Links</h2>
+              <li><a href="">Services</a></li>
+              <li><a href="">Supports</a></li>
+              <li><a href="">Terms</a></li>
+              <li><a href="">privacy Policy</a></li>
+             </div>
+          </div>
+
+          <div class="link input">
+            <p class="info">Subscribe More Info</p>
+            <form >
+              <input type="text" placeholder="Enter your Email" required>
+           <div class="button">
+            <button>Subscribe</button>
+           </div>
+            </form>
+          </div>
+         </div>
+
+         <div class="line"></div>
+
+         <div class="link_icons">
+          <a href=""><i class='bx bxl-facebook'></i></a>
+          <a href=""><i class='bx bxl-twitter' ></i></a>
+          <a href=""><i class='bx bxl-instagram'></i></a>
+          <a href=""><i class='bx bxl-google-plus'></i></a>
+          
+        </div>
+      </div>
     </div>
   </footer>
   
