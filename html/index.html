@@ -13,20 +13,22 @@ rel="stylesheet">
   <link rel="stylesheet" href="../css/style_index.css">
   <link rel="icon" type="image/png" sizes="32x32" href="../image/icons/logo2.png" >
   
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <script src=".https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <title>Sole Society</title>
 </head>
 <body>
   <header>
-    <section class="first_header">
+    <section class="first_header" data-aos="fade-down"  data-aos-duration="1000">
       <div class="container">
         <div class="row">
           <div class="flex">
            <div class="logo">
-            <img src="../image/icons/logo2.png" alt="">
+           <a href="../html/index.html"> <img src="../image/icons/logo2.png" alt=""></a>
            </div>
              <div class="search">
               <form>
@@ -38,7 +40,7 @@ rel="stylesheet">
           <div class="link">
             <ul>
               <li><a href="">Sign up</a></li>
-              <li><a href="">Log in</a></li>
+              <li><a href="login.html">Log in</a></li>
              </ul>
              <div class="menu-icon" id="menuIcon">
               <i class='bx bx-menu bx-md'></i>
@@ -94,10 +96,10 @@ rel="stylesheet">
 
  
 <main>
-  <section class="hero">
+  <section class="hero" >
     <div class="container">
       <div class="row">
-        <div class="slideshow">
+        <div class="slideshow" data-aos="zoom-in" data-aos-duration="1000">
           <div class="mySlides fade">
             <img src="../image/posters/poster1.jpg" style="width:100%;">
           </div>
@@ -125,10 +127,10 @@ rel="stylesheet">
       <div class="container">
         <div class="row">
           <div class="products-slide">
-            <h1 class="product-heading">Featured Products</h1>
+            <h1 class="product-heading" data-aos="zoom-out-right" data-aos-duration="1000">Featured Products</h1>
             
             <!-- feature products -->
-            <div class="feature-products ">
+            <div class="feature-products " data-aos="zoom-in" data-aos-duration="1000">
               <div class="product">
               <div class="product-image">
              <a href=""><img src="../image/Dior/B25Runnerneaker.png" alt=""></a>
@@ -232,8 +234,8 @@ rel="stylesheet">
         
         
              <!-- product categories -->
-            <h1 class="product-heading">Categories</h1>
-            <div class="product-categories ">
+            <h1 class="product-heading"  data-aos="zoom-out-right" data-aos-duration="1000">Categories</h1>
+            <div class="product-categories " data-aos="zoom-in" data-aos-duration="1000">
              <div class="product">
                 <div class="product-image">
               <a href=""> <img src="../image/categories/men.jpg" alt=""></a>
@@ -295,8 +297,8 @@ rel="stylesheet">
               </div>
             </div>
                <!-- product brands -->
-            <h1 class="product-heading">Brands</h1>
-            <div class="product-brands ">
+            <h1 class="product-heading" data-aos="zoom-out-right" data-aos-duration="1000">Brands</h1>
+            <div class="product-brands " data-aos="zoom-in" data-aos-duration="1000">
               <div class="product">
                 <div class="product-image">
                   <a href=""><img src="../image/brands/Adidas.png" alt=""></a>
@@ -435,5 +437,8 @@ rel="stylesheet">
   </footer>
   
   <script src="../js/function.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

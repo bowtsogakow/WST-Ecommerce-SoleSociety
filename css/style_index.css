@@ -524,7 +524,7 @@ footer .footer-heading {
   border-radius: 50%;
 }
 footer .link_icons .bx:hover{
-  outline: 1px solid var(--desaturated-blue);
+  opacity: 0.5;
 }
 
 
@@ -552,7 +552,7 @@ footer .link_icons .bx:hover{
 header .first_header .flex .search img {
   position: absolute;
   width: 18px;
-  top: 12px;
+  top: 18px;
   left: 80px;
 }
 header .first_header .link .menu-icon{

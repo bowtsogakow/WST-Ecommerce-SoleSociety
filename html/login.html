@@ -1,49 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" 
+rel="stylesheet">
   <link rel="stylesheet" href="../css/style_login.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../image/icons/logo2.png" >
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-  
-  <title>Ecommerce Website</title>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src=".https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <title>Sole Society</title>
 </head>
-<style>
-  
-</style>
 <body>
   <header>
-    <form>
-    <div class="container">
-      <div class="row">
-        <div class="flex">
-          <div class="logo">
-            <h1>LOGO</h1>
+    <section class="first_header">
+      <div class="container">
+        <div class="row">
+          <div class="flex">
+           <a href="../html/index.html"><div class="logo">
+            <img src="../image/icons/logo2.png" alt="">
+             </div></a>
+             <div class="search">
+              <form>
+                <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
+                placeholder="Search products here" autocomplete="off" spellcheck="false">
+              </form>
+             </div>
           </div>
-          <div class="search">
-            <form>
-              <img src="image/search-regular-24.png" alt="">
-              <input type="text" name="search" placeholder="Search products here">
-            </form>
+          <div class="link">
+            <ul>
+              <li><a href="">Sign up</a></li>
+              <li><a href="">Log in</a></li>
+             </ul>
+             <div class="menu-icon" id="menuIcon">
+              <i class='bx bx-menu bx-md'></i>
+             </div>
           </div>
-        </div>
-        <div class="link">
+          </div>
+         </div>
+         <div class="dropdown_menu" id="dropDownMenu">
           <ul>
-            <li><a href="#">Sign up</a></li>
-            <li><a href="#">Log in</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </header>
-  <div class="wrapper">
-    <div class="form-box login">
-      <h2>Login</h2>
-      <!-- Email -->
-        <div class="input-box label-email">
+            <li><a href="">Sign up</a></li>
+            <li><a href="login.html">Log in</a></li>
+           </ul>
+         </div>
+    </section>
+
+    <section class="Hidden_header">
+      <div class="container">
+        <div class="row">
+          <div class="flex">
+           <div class="logo">
+            <img src="../image/icons/logo1.png" alt="">
+           </div>
+             <div class="search">
+              <form>
+                <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
+                placeholder="Search products here" autocomplete="off" spellcheck="false">
+              </form>
+             </div>
+          </div>
+          <div class="link">
+            <ul>
+              <li><a href="">Shop</a></li>
+              <li><a href="">Cart</a></li>
+              <li><a href="">Foverite</a></li>
+              <li><a href="">Account</a></li>
+             </ul>
+             <div class="menu-icon" id="menuIcon">
+              <i class='bx bx-menu bx-md'></i>
+             </div>
+          </div>
+          </div>
+         </div>
+         <div class="dropdown_menu" id="dropDownMenu">
+          <ul>
+              <li><a href="">Shop</a></li>
+              <li><a href="">Cart</a></li>
+              <li><a href="">Foverite</a></li>
+              <li><a href="">Account</a></li>
+           </ul>
+         </div>
+    </section>
+ </header>
+
+  <main>
+    <div class="wrapper" data-aos="flip-left"  data-aos-duration="1000">
+      <div class="form-box login">
+        <h2>Login</h2>
+       <form action="">
+         <!-- Email -->
+         <div class="input-box label-email">
           <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
           <input type="text" required>
           <label>Email</label>
@@ -63,15 +120,93 @@
         <label>Confirm Password</label>
       </div>
       <button type="submit" class="btn1">Login</button>
-      <div class="forgot-password-wrapper">
-        <a href="#">Forgot Password</a>
+       </form>
+        <div class="forgot-password-wrapper">
+          <a href="#">Forgot Password</a>
+        </div>
+       <div class="create">
+        <a href=""> <button type="submit" class="btn2">Create new account</button></a>
+       </div>
       </div>
-      <button type="submit" class="btn2">Create new account</button>
+      </div>
+  </main>
+
+<footer>
+  <div class="container">
+    <div class="row">
+       <div class="logo">
+     <a href=""> <img src="../image/icons/logo1.png" alt=""></a>
+       </div>
+       <div class="links">
+        <div class="link">
+          <div class="about_us">
+            <div class="">
+              <h2 class="footer-heading">About Us</h2>
+           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, reprehenderit!</p>
+            </div>
+           <div class="link">
+            <div class="contact_us">
+            <h2 class="footer-heading">Contact Us</h2>
+            <div class="phone">
+              <img src="../image/icons/icon-phone.svg" alt="">
+             <a href="">Phone: +1-543-123-4567</a>
+           </div>
+           <div class="email">
+             <img src="../image/icons/icon-email.svg" alt="">
+           <a href=""> example@fylo.com</a>
+          </div>
+         </div>
+        </div>
+      </div>
+        </div>
+
+        <div class="link">
+          <div class="information">
+            <h2 class="footer-heading">information</h2>
+            <li><a href="">About Us</a></li>
+            <li><a href="">More Search</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Testimonals</a></li>
+            <li><a href="">Events</a></li>
+          </div>
+        </div>
+
+        <div class="link">
+          <div class="helpful-links">
+            <h2 class="footer-heading">helpful Links</h2>
+            <li><a href="">Services</a></li>
+            <li><a href="">Supports</a></li>
+            <li><a href="">Terms</a></li>
+            <li><a href="">privacy Policy</a></li>
+           </div>
+        </div>
+
+        <div class="link input">
+          <p class="info">Subscribe More Info</p>
+          <form >
+            <input type="text" placeholder="Enter your Email" required>
+         <div class="button">
+          <button>Subscribe</button>
+         </div>
+          </form>
+        </div>
+       </div>
+
+       <div class="line"></div>
+
+       <div class="link_icons">
+        <a href=""><i class='bx bxl-facebook'></i></a>
+        <a href=""><i class='bx bxl-twitter' ></i></a>
+        <a href=""><i class='bx bxl-instagram'></i></a>
+        <a href=""><i class='bx bxl-google-plus'></i></a>
+        
+      </div>
     </div>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </div>
-</form>
+</footer>
+<script>
+  AOS.init();
+</script>
 </body>
 
 <script>
@@ -106,6 +241,18 @@ hideConfirmPass.addEventListener("click", () => {
   confirmPass.setAttribute("type", "password");
   showConfirmPass.style.visibility = "visible";
   hideConfirmPass.style.visibility = "hidden";
+});
+
+const toggleBtn = document.getElementById('menuIcon');
+const dropDownMenu = document.getElementById('dropDownMenu');
+
+toggleBtn.addEventListener('click', ()=> {
+  if(dropDownMenu.classList.contains('open')) {
+    dropDownMenu.classList.remove('open');
+  }
+  else {
+    dropDownMenu.classList.add('open');
+  }
 });
 </script>
 </html>
