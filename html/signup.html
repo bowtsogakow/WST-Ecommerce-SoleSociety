@@ -194,7 +194,6 @@ header .link a:hover {
 </head>
 <body>
   <header>
-    <form>
     <div class="container">
       <div class="row">
         <div class="flex">
@@ -220,51 +219,85 @@ header .link a:hover {
   <div class="wrapper">
     <div class="form-box login">
       <h2>Sign Up</h2>
-      <!-- Username -->
-        <div class="input-box label-username">
-          <span class="icon"><ion-icon name="username-outline"></ion-icon></span>
-          <input type="text" required>
-          <label>Username</label>
-        </div>
-       <!--Email-->
-       <div class="input-box label-email">
-        <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-        <input type="text" required>
-        <label>Email</label>
-      </div>
-       <!--Password-->
-       <div class="input-box">
-        <span class="icon icon-hide" id="hidePassword"><ion-icon name="eye-outline"></ion-icon></span>
-        <span class="icon icon-show" id="showPassword"><ion-icon name="eye-off-outline"></ion-icon></span>
-        <input type="password" id="inputPassword" required>
-        <label>Password</label>
-      </div>
-      <button type="submit" class="btn1">SIGN UP</button>
+          <form action = "signup.php" method="post" id = "SignUpForm">
+            <!-- Username -->
+              <div class="input-box label-username">
+                <span class="icon"><ion-icon name="username-outline"></ion-icon></span>
+                <input type="text" name="Username">
+                <label>Username</label>
+              </div>
+            <!--Email-->
+            <div class="input-box label-email">
+              <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+              <input type="text" name="Email" required>
+              <label>Email</label>
+            </div>
+            <!--Password-->
+            <div class="input-box">
+              <span class="icon icon-hide" id="hidePassword"><ion-icon name="eye-outline"></ion-icon></span>
+              <span class="icon icon-show" id="showPassword"><ion-icon name="eye-off-outline"></ion-icon></span>
+              <input type="password" name = "password" id="inputPassword" required>
+              <label>Password</label>
+            </div>
+            <button type="submit" class="btn1">SIGN UP</button>
+
+          </form>
+
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </div>
-</form>
 </body>
 
-<script>
-const showPass = document.getElementById("showPassword");
-const hidePass = document.getElementById("hidePassword");
-const inputPassword = document.getElementById("inputPassword");
-  
-showPass.addEventListener("click", () => {
-  inputPassword.setAttribute("type", "text");
-  showPass.style.visibility = "hidden";
-  hidePass.style.visibility = "visible";
-});
+<?php
+  include "DbQuery.php"; 
+  $username;
+  $email; 
+  $password;
+  $status; 
 
-hidePass.addEventListener("click", () => {
-  inputPassword.setAttribute("type", "password");
-  showPass.style.visibility = "visible";
-  hidePass.style.visibility = "hidden";
-});
+  if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["Username"];
+    $email = $_POST["Email"];
+    $password = $_POST["password"];
 
+    $status = SignUp($username, $email, $password); 
+    
+    }
+?>
+
+<script> 
+
+    
+     document.getElementById("SignUpForm").addEventListener('submit', function(event) {
+        // Prevent the default form submission behavior
+        // Show an alert when the form is submitted
+        
+        alert("<?php echo $status; ?>");
+        console.log(text);
+      });
+        
   </script>
-  
 
+<script>
+  const showPass = document.getElementById("showPassword");
+  const hidePass = document.getElementById("hidePassword");
+  const inputPassword = document.getElementById("inputPassword");
+    
+  showPass.addEventListener("click", () => {
+    inputPassword.setAttribute("type", "text");
+    showPass.style.visibility = "hidden";
+    hidePass.style.visibility = "visible";
+  });
+
+  hidePass.addEventListener("click", () => {
+    inputPassword.setAttribute("type", "password");
+    showPass.style.visibility = "visible";
+    hidePass.style.visibility = "hidden";
+  });
+
+
+</script>
+  
+   
 </html>

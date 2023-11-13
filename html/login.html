@@ -16,7 +16,7 @@
 </style>
 <body>
   <header>
-    <form>
+
     <div class="container">
       <div class="row">
         <div class="flex">
@@ -24,10 +24,12 @@
             <h1>LOGO</h1>
           </div>
           <div class="search">
+
             <form>
               <img src="image/search-regular-24.png" alt="">
               <input type="text" name="search" placeholder="Search products here">
             </form>
+
           </div>
         </div>
         <div class="link">
@@ -40,26 +42,28 @@
     </div>
   </header>
   <div class="wrapper">
+
     <div class="form-box login">
+    <form action = "login.php" method = "post" >
       <h2>Login</h2>
       <!-- Email -->
         <div class="input-box label-email">
           <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-          <input type="text" required>
+          <input type="text" required name = "email">
           <label>Email</label>
         </div>
        <!--Password-->
       <div class="input-box">
         <span class="icon icon-hide" id="hidePassword"><ion-icon name="eye-outline"></ion-icon></span>
         <span class="icon icon-show" id="showPassword"><ion-icon name="eye-off-outline"></ion-icon></span>
-        <input type="password" id="inputPassword" required>
+        <input type="password" name = "inputPassword" id="inputPassword" required>
         <label>Password</label>
       </div>
        <!--ConfirmPassword-->
        <div class="input-box label-confirm-password">
         <span class="icon icon-hide" id="hideConfirmPassword"><ion-icon name="eye-outline"></ion-icon></span>
         <span class="icon icon-show" id="showConfirmPassword"><ion-icon name="eye-off-outline"></ion-icon></span>
-        <input type="password" id="confirmPassword" required>
+        <input type="password" name = "confirmPassword" id="confirmPassword" required>
         <label>Confirm Password</label>
       </div>
       <button type="submit" class="btn1">Login</button>
@@ -68,11 +72,38 @@
       </div>
       <button type="submit" class="btn2">Create new account</button>
     </div>
+
+    </form>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </div>
-</form>
+
 </body>
+
+<?php
+  include "DbQuery.php"; 
+  $email; 
+  $password1;
+  $password2;
+  $status; 
+
+  
+
+  if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
+    $password1 = $_POST["inputPassword"];
+    $password2 = $_POST["confirmPassword"];
+    $status;
+
+    $status = 
+    }
+
+    $status = SignUp($username, $email, $password); 
+    
+    }
+
+
+?>
 
 <script>
 const showPass = document.getElementById("showPassword");
