@@ -228,21 +228,18 @@ header .first_header .row{
     justify-content: center;
   }
 
-
-/* login */
-
-.wrapper {
+  .wrapper {
  
-  width: 400px;
-  color:#f2f2f2;
-  border-radius: 10px;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f2f2f2;
-  margin: 50px auto;
-}
+    width: 400px;
+    color:#f2f2f2;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+    margin: 50px auto;
+  }
 
 .wrapper .form-box {
   width: 100%;
@@ -251,7 +248,7 @@ header .first_header .row{
 
 .form-box h2 {
   font-size: 2em;
-  color:#252422;
+  color: #130702;
   text-align: center;
   text-transform: uppercase;
 }
@@ -260,22 +257,9 @@ header .first_header .row{
   position: relative;
   width: 100%;
   height: 40px;
-  border-bottom: 1px solid #252422;
+  border-bottom: 1px solid black;
   margin: 30px 0;
 }
-
-/* .input-box {
-      position: relative;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin: 300px auto;
-    display: flex;
-} */
-
-
-/* ... (previous CSS code) ... */
 
 .input-box label {
   position: absolute;
@@ -288,7 +272,7 @@ header .first_header .row{
   pointer-events: none;
   transition: all 0.3s; 
 }
-/* Add transition property for smooth animation */
+
 
 .input-box input:focus + label,
 .input-box input:valid + label {
@@ -302,11 +286,9 @@ header .first_header .row{
   border: none;
   outline: none;
   font-size: 1em;
-  color:#252422;
+  color: #252422;
   font-weight: 600;
   padding: 0 20px 0 5px;
- 
- 
 }
 
 .input-box .icon {
@@ -319,57 +301,22 @@ header .first_header .row{
 
 }
 .btn1{
-    width: 100%;
-    padding: 10px;
-    position: relative;
-    background:#EB5E28 ;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    border-radius: 7px;
-    top: -20px;
-    color: #f2f2f2;
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  background:#EB5E28 ;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 7px;
+  top: -20px;
+  color: #f2f2f2;
+    
 }
-
 .btn1:hover{
- background-color: #d46f47;
-}
-
-.forgot-password-wrapper a{
-  color: #EB5E28;
-  text-decoration: none;
-}
-
-
-/* padding: 10px 20px;
-background-color: #007bff;
-color: #fff;
-border: none;
-cursor: pointer;
-position: relative;
-top: -20px; Ito ay nag-aadjust sa itaas */
-.forgot-password-wrapper {
-    text-align: center;
-    margin: auto;
-    margin-top: -10px;
-    margin-bottom: 10px;
-  }
-  .create{
-    text-align: center;
-  }
-  .btn2 {
-    width: 75%;
-    height: 40px;
-    background: #EB5E28;
-    border: none;
-    outline: none;
-    border-radius: 7px;
-    color: #f2f2f2;
-    cursor: pointer;
- }
- .btn2:hover{
   background-color: #d46f47;
- }
+}
+
 .icon {
     position: absolute;
     right: 1rem;
@@ -381,7 +328,7 @@ top: -20px; Ito ay nag-aadjust sa itaas */
     visibility: hidden;
   }
 
-  /* FOOTER */
+   /* FOOTER */
 footer {
   background-color:#000000;
   height: 600px;

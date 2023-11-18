@@ -321,6 +321,9 @@ section.scroll_product {
   padding: 50px 0px 100px 0px;
   background-color: #252422;
 } 
+section.scroll_product a{
+text-decoration: none;
+}
 section.scroll_product  .container{
   max-width: 1440px;
   margin: 0 auto;
