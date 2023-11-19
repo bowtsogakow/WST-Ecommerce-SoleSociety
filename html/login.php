@@ -24,81 +24,145 @@ rel="stylesheet">
   <script src=".https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <title>Sole Society</title>
 </head>
+
 <body>
+
   <header>
-    <section class="first_header">
-      <div class="container">
-        <div class="row">
-          <div class="flex">
-           <a href="../html/index.html"><div class="logo">
-            <img src="../image/icons/logo2.png" alt="">
-             </div></a>
-             <div class="search">
-          
-                <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
-                placeholder="Search products here" autocomplete="off" spellcheck="false">
-              </form>
-             </div>
-          </div>
-          <div class="link">
+    <?php 
+    if(isset($_SESSION['ID'])){
+      
+      if($_SESSION['ID']< 0) {
+        echo '
+      <section class="first_header">
+        <div class="container">
+          <div class="row">
+            <div class="flex">
+             <a href="../html/index.html">
+              <a href="./index.html">
+                <div class="logo">
+                <img src="../image/icons/logo2.png" alt="">
+                 </div></a></a>
+               <div class="search">
+            
+                  <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
+                  placeholder="Search products here" autocomplete="off" spellcheck="false">
+                </form>
+               </div>
+            </div>
+            <div class="link">
+              <ul>
+                <li><a href="signup.php">Sign up</a></li>
+                <li><a href="login.php">Log in</a></li>
+               </ul>
+               <div class="menu-icon" id="menuIcon">
+                <i class="bx bx-menu bx-md"></i>
+               </div>
+            </div>
+            </div>
+           </div>
+           <div class="dropdown_menu" id="dropDownMenu">
             <ul>
               <li><a href="signup.php">Sign up</a></li>
               <li><a href="login.php">Log in</a></li>
              </ul>
-             <div class="menu-icon" id="menuIcon">
-              <i class='bx bx-menu bx-md'></i>
-             </div>
-          </div>
-          </div>
-         </div>
-         <div class="dropdown_menu" id="dropDownMenu">
-          <ul>
-            <li><a href="signup.php">Sign up</a></li>
-            <li><a href="login.php">Log in</a></li>
-           </ul>
-         </div>
-    </section>
-
-    <section class="Hidden_header">
-      <div class="container">
-        <div class="row">
-          <div class="flex">
-           <div class="logo">
-            <img src="../image/icons/logo1.png" alt="">
            </div>
-             <div class="search">
-  
-            <form>
-                <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
-                placeholder="Search products here" autocomplete="off" spellcheck="false">
-              </form>
-   
-          </div>
-          </div>
-          <div class="link">
-            <ul>
-              <li><a href="">Shop</a></li>
-              <li><a href="">Cart</a></li>
-              <li><a href="">Foverite</a></li>
-              <li><a href="">Account</a></li>
-             </ul>
-             <div class="menu-icon" id="menuIcon">
-              <i class='bx bx-menu bx-md'></i>
-             </div>
-          </div>
-          </div>
-         </div>
-         <div class="dropdown_menu" id="dropDownMenu">
-          <ul>
-              <li><a href="">Shop</a></li>
-              <li><a href="">Cart</a></li>
-              <li><a href="">Foverite</a></li>
-              <li><a href="">Account</a></li>
-           </ul>
-         </div>
-    </section>
- </header>
+      </section>
+      ';
 
+
+      }
+
+      else if ($_SESSION['ID'] > 0) {
+        echo '
+        <section class="Hidden_header">
+          <div class="container">
+            <div class="row">
+              <div class="flex">
+               <div class="logo">
+                <img src="../image/icons/logo1.png" alt="">
+               </div>
+                 <div class="search">
+      
+                <form>
+                    <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
+                    placeholder="Search products here" autocomplete="off" spellcheck="false">
+                  </form>
+       
+              </div>
+              </div>
+              <div class="link">
+                <ul>
+                  <li><a href="">Shop</a></li>
+                  <li><a href="">Cart</a></li>
+                  <li><a href="">Foverite</a></li>
+                  <li><a href="">Account</a></li>
+                 </ul>
+                 <div class="menu-icon" id="menuIcon">
+                  <i class="bx bx-menu bx-md"></i>
+                 </div>
+              </div>
+              </div>
+             </div>
+             <div class="dropdown_menu" id="dropDownMenu">
+              <ul>
+                  <li><a href="">Shop</a></li>
+                  <li><a href="">Cart</a></li>
+                  <li><a href="">Foverite</a></li>
+                  <li><a href="">Account</a></li>
+               </ul>
+             </div>
+        </section>';
+     
+    
+      }
+    }
+
+    else if (!isset($_SESSION['ID'])){
+      echo '
+      <section class="first_header">
+        <div class="container">
+          <div class="row">
+            <div class="flex">
+             <a href="../html/index.html">
+              <a href="./index.html">
+                <div class="logo">
+                <img src="../image/icons/logo2.png" alt="">
+                 </div></a></a>
+               <div class="search">
+            
+                  <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
+                  placeholder="Search products here" autocomplete="off" spellcheck="false">
+                </form>
+               </div>
+            </div>
+            <div class="link">
+              <ul>
+                <li><a href="signup.php">Sign up</a></li>
+                <li><a href="login.php">Log in</a></li>
+               </ul>
+               <div class="menu-icon" id="menuIcon">
+                <i class="bx bx-menu bx-md"></i>
+               </div>
+            </div>
+            </div>
+           </div>
+           <div class="dropdown_menu" id="dropDownMenu">
+            <ul>
+              <li><a href="signup.php">Sign up</a></li>
+              <li><a href="login.php">Log in</a></li>
+             </ul>
+           </div>
+      </section>
+      ';
+    }
+
+    ?>
+
+    </header>
+
+    
+
+    
   <main>
     <div class="wrapper" data-aos="flip-left"  data-aos-duration="1000">
   

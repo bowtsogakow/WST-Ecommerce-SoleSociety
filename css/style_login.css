@@ -52,7 +52,7 @@ header .first_header .row{
     position: absolute;
     width: 18px;
     top: 19px;
-    left: 80px;
+    left: 100px;
   }
   header .first_header .flex .search input{
     padding: 8px;
@@ -259,7 +259,7 @@ header .first_header .row{
 .input-box {
   position: relative;
   width: 100%;
-  height: 35px;
+  height: 40px;
   border-bottom: 1px solid #252422;
   margin: 30px 0;
 }
@@ -286,9 +286,9 @@ header .first_header .row{
   color:#252422;
   font-weight: 500;
   pointer-events: none;
-  transition: all 0.3s; /* Add transition property for smooth animation */
+  transition: all 0.3s; 
 }
-
+/* Add transition property for smooth animation */
 
 .input-box input:focus + label,
 .input-box input:valid + label {
@@ -297,6 +297,7 @@ header .first_header .row{
 
 .input-box input {
   width: 100%;
+  height: 100%;
   background: transparent;
   border: none;
   outline: none;
@@ -498,7 +499,7 @@ header .first_header .flex .search img {
   position: absolute;
   width: 18px;
   top: 18px;
-  left: 80px;
+  left: 100px;
 }
 header .first_header .link .menu-icon{
   display: block;
@@ -596,7 +597,7 @@ header .first_header .flex .search img {
     position: absolute;
     width: 18px;
     top: 18px;
-    left: 80px;
+    left: 100px;
 }
   .products-slide {
     display: grid;
