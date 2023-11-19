@@ -1,3 +1,7 @@
+<?php 
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,56 +15,160 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" 
 rel="stylesheet">
   <link rel="stylesheet" href="../css/style_index.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="./image/icons/logo.jpg" >
+  <link rel="icon" type="image/png" sizes="32x32" href="../image/icons/logo2.png" >
   
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <script src=".https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <title>Sole Society</title>
 </head>
 <body>
 
 
-<header>
-  <div class="container">
-    <div class="row">
-      <div class="flex">
-       <div class="logo">
-        <h1>LOGO</h1>
-       </div>
-         <div class="search">
-          <form>
-            <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
-            placeholder="Search products here" autocomplete="off" spellcheck="false">
-          </form>
-         </div>
-      </div>
-      <div class="link">
-        <ul>
-          <li><a href= "signup.php">Sign up</a></li>
-          <li><a href= "login.php">Log in</a></li>
-         </ul>
-         <div class="menu-icon" id="menuIcon">
-          <i class='bx bx-menu bx-md'></i>
-         </div>
-      </div>
-      </div>
-     </div>
-     <div class="dropdown_menu" id="dropDownMenu">
-      <ul>
-        <li><a href="signup.html">Sign up</a></li>
-        <li><a href="login.html">Log in</a></li>
-       </ul>
-     </div>
-  </header>
+  <header>
+    <?php
+      if(isset($_SESSION['ID'])){
+        if($_SESSION['ID'] >= 1){
+
+          echo '
+            <section class="first_header">
+              <div class="container">
+                <div class="row">
+                  <div class="flex">
+                  <div class="logo">
+                    <img src="../image/icons/logo1.png" alt="">
+                  </div>
+                    <div class="search">
+          
+                    <form>
+                        <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
+                        placeholder="Search products here" autocomplete="off" spellcheck="false">
+                      </form>
+          
+                  </div>
+                  </div>
+                  <div class="link">
+                    <ul>
+                      <li><a href="">Shop</a></li>
+                      <li><a href="">Cart</a></li>
+                      <li><a href="">Foverite</a></li>
+                      <li><a href="">Account</a></li>
+                    </ul>
+                    <div class="menu-icon" id="menuIcon">
+                      <i class="bx bx-menu bx-md"></i>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="dropdown_menu" id="dropDownMenu">
+                  <ul>
+                      <li><a href="">Shop</a></li>
+                      <li><a href="">Cart</a></li>
+                      <li><a href="">Foverite</a></li>
+                      <li><a href="">Account</a></li>
+                  </ul>
+                </div>
+            </section>
+          '; 
+
+        }
+        
+        if($_SESSION['ID'] < 0){
+          
+          echo '
+            <section class="first_header">
+              <div class="container">
+                <div class="row">
+                  <div class="flex">
+                  <a href="../html/index.html"><div class="logo">
+                    <img src="../image/icons/logo2.png" alt="">
+                    </div></a>
+                    <div class="search">
+                  
+                        <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
+                        placeholder="Search products here" autocomplete="off" spellcheck="false">
+                      </form>
+                      </div>
+                  </div>
+                  <div class="link">
+                    <ul>
+                      <li><a href="signup.php">Sign up</a></li>
+                      <li><a href="login.php">Log in</a></li>
+                    </ul>
+                    <div class="menu-icon" id="menuIcon">
+                      <i class="bx bx-menu bx-md"></i>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="dropdown_menu" id="dropDownMenu">
+                  <ul>
+                    <li><a href="signup.php">Sign up</a></li>
+                    <li><a href="login.php">Log in</a></li>
+                  </ul>
+                </div>
+            </section>
+          '; 
+
+        }
+
+      } 
+
+      if(!isset($_SESSION['ID'])){
+
+        echo '
+          <section class="first_header">
+            <div class="container">
+              <div class="row">
+                <div class="flex">
+                <a href="../html/index.html"><div class="logo">
+                  <img src="../image/icons/logo2.png" alt="">
+                  </div></a>
+                  <div class="search">
+                
+                      <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
+                      placeholder="Search products here" autocomplete="off" spellcheck="false">
+                    </form>
+                    </div>
+                </div>
+                <div class="link">
+                  <ul>
+                    <li><a href="signup.php">Sign up</a></li>
+                    <li><a href="login.php">Log in</a></li>
+                  </ul>
+                  <div class="menu-icon" id="menuIcon">
+                    <i class="bx bx-menu bx-md"></i>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="dropdown_menu" id="dropDownMenu">
+                <ul>
+                  <li><a href="signup.php">Sign up</a></li>
+                  <li><a href="login.php">Log in</a></li>
+                </ul>
+              </div>
+          </section>
+        '; 
+
+      }
+ 
+    
+    ?>
 
 
+    
+ </header>
+
+ 
 <main>
-  <section class="hero">
+  <section class="hero" >
     <div class="container">
       <div class="row">
-        <div class="slideshow">
+        <div class="slideshow" data-aos="zoom-in" data-aos-duration="1000">
           <div class="mySlides fade">
             <img src="../image/posters/poster1.jpg" style="width:100%;">
           </div>
@@ -69,6 +177,12 @@ rel="stylesheet">
           </div>
           <div class="mySlides fade">
             <img src="../image/posters/poster3.jpg" style="width:100%;">
+          </div>
+          <div class="mySlides fade">
+            <img src="../image/posters/poster4.jpg" style="width:100%;">
+          </div>
+          <div class="mySlides fade">
+            <img src="../image/posters/poster5.jpg" style="width:100%;">
           </div>
           <a class="back" onclick="plusSlides(-1)">❮</a>
           <a class="next"  onclick="plusSlides(1)">❯</a>
@@ -82,320 +196,231 @@ rel="stylesheet">
       <div class="container">
         <div class="row">
           <div class="products-slide">
-            <h1 class="product-heading">Featured Products</h1>
-        
-            <div class="feature-products ">
-                    <!-- feature products here -->
-            <div class="product">
+            <h1 class="product-heading" data-aos="zoom-out-right" data-aos-duration="1000">Featured Products</h1>
+            
+            <!-- feature products -->
+            <div class="feature-products " data-aos="zoom-in" data-aos-duration="1000">
+              <div class="product">
               <div class="product-image">
-                <!-- product image -->
-                <img src="../image/Dior/B25Runnerneaker.png" alt="">
+             <a href=""><img src="../image/Dior/B25Runnerneaker.png" alt=""></a>
               </div>
               <div class="product-name ">
-                <!-- product name -->
-                <p>B25 Runner neaker</p>
+              <p>B25 Runner neaker</p>
               </div>
               <div class="product-catergory">
-                <!-- product category -->
-                <p>Men , Running</p>
+              <p>Men , Running</p>
               </div>
               <div class="product-price">
-                <!-- product price -->
-                <p>&#8369;10,000.00</p>
+               <p>&#8369;10,000.00</p>
               </div>
             </div>
             <div class="product">
               <div class="product-image">
-                <!-- product image -->
-                <img src="../image/adidas/CENTENNIAL_85_LOW_SHOES.png "alt="">
+               <a href=""><img src="../image/adidas/CENTENNIAL_85_LOW_SHOES.png "alt=""></a>
               </div>
               <div class="product-name">
-                <!-- product name -->
-                <p>Centennial 85 Low Shoes </p>
+               <p>Centennial 85 Low Shoes </p>
               </div>
               <div class="product-catergory">
-                <!-- product category -->
-                <p>Men , Women , Basketball</p>
+             <p>Men , Women , Basketball</p>
               </div>
               <div class="product-price">
-                <!-- product price -->
-                <p>₱5,300</p>
+               <p>₱5,300</p>
               </div>
             </div>
             <div class="product">
               <div class="product-image">
-                <!-- product image -->
-                <img src="../image/newbalance/2002R__Eclipse.png" alt="">
+                <a href=""><img src="../image/newbalance/2002R__Eclipse.png" alt=""></a>
               </div>
               <div class="product-name">
-                <!-- product name -->
                 <p>2002R 'Eclipse'</p>
               </div>
-              <div class="product-catergory">
-                <!-- product category -->
-                <p>catergory</p>
+             <div class="product-catergory">
+               <p>Men , Kids , Running</p>
               </div>
               <div class="product-price">
-                <!-- product price -->
-                <p>₱10,495</p>
+              <p>₱10,495</p>
               </div>
             </div>
             <div class="product">
               <div class="product-image">
-                <!-- product image -->
-                <img src="../image/vans/sk8hi.png" alt="">
+                <a href=""><img src="../image/vans/sk8hi.png" alt=""></a>
               </div>
               <div class="product-name">
-                <!-- product name -->
                 <p>Sk8-Hi Shoe</p>
               </div>
               <div class="product-catergory">
-                <!-- product category -->
-                <p>catergory</p>
+             <p>Men , Women , Skateboarding</p>
               </div>
               <div class="product-price">
-                <!-- product price -->
                 <p>₱4,181</p>
               </div>
             </div>
             <div class="product">
               <div class="product-image">
-                <!-- product image -->
-                <img src="../image/nike/Nike_Air_Max_97.png" alt="">
+               <a href=""><img src="../image/nike/Nike_Air_Max_97.png" alt=""></a>
               </div>
               <div class="product-name">
-                <!-- product name -->
                 <p>Nike Air Max 97</p>
               </div>
               <div class="product-catergory">
-                <!-- product category -->
-                <p>catergory</p>
+               <p>Men , Asthetic</p>
               </div>
               <div class="product-price">
-                <!-- product price -->
-                <p>₱8,095</p>
+              <p>₱8,095</p>
               </div>
             </div>
             <div class="product">
               <div class="product-image">
-                <!-- product image -->
-                <img src="../image/reebok/ReebokNanoX3.png" alt="">
+              <a href=""><img src="../image/reebok/ReebokNanoX3.png" alt=""></a>
               </div>
               <div class="product-name">
-                <!-- product name -->
                 <p>Reebok Nano X3</p>
               </div>
               <div class="product-catergory">
-                <!-- product category -->
-                <p>catergory</p>
+                <p>Women , Running</p>
               </div>
               <div class="product-price">
-                <!-- product price -->
-                <p>₱6,396</p>
+               <p>₱6,396</p>
               </div>
             </div>
             <div class="product">
               <div class="product-image">
-                <!-- product image -->
-                <img src="../image/Converse/Chuck_70.png" alt="">
+                <a href=""><img src="../image/Converse/Chuck_70.png" alt=""></a>
               </div>
               <div class="product-name">
-                <!-- product name -->
                 <p>Chuck 70 </p>
               </div>
               <div class="product-catergory">
-                <!-- product category -->
-                <p>catergory</p>
+              <p>Men , Asthetic , Skateboarding</p>
               </div>
               <div class="product-price">
-                <!-- product price -->
-                <p>₱4,390</p>
+               <p>₱4,390</p>
               </div>
             </div>
             </div>
         
         
         
-            
-            <h1 class="product-heading">Catergories</h1>
-            <div class="product-categories ">
-              <!-- product categories -->
-              <div class="product">
+             <!-- product categories -->
+            <h1 class="product-heading"  data-aos="zoom-out-right" data-aos-duration="1000">Categories</h1>
+            <div class="product-categories " data-aos="zoom-in" data-aos-duration="1000">
+             <div class="product">
                 <div class="product-image">
-                  <!-- product image -->
-                  <img src="" alt="">
+              <a href=""> <img src="../image/categories/men.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
-                  <!-- product name -->
-                  <p>Catergory name</p>
+                  <p>Nike</p>
               </div>
               </div>
         
               <div class="product">
                 <div class="product-image">
-                  <!-- product image -->
-                  <img src="../image/B25Runnerneaker.png" alt="">
+                 <a href=""><img src="../image//categories/women.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
-                  <!-- product name -->
-                  <p>Catergory name</p>
+               <p>Women</p>
               </div>
               </div>
         
               <div class="product">
                 <div class="product-image">
-                  <!-- product image -->
-                  <img src="../image/B25Runnerneaker.png" alt="">
+                <a href=""> <img src="../image/categories/kids.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
-                  <!-- product name -->
-                  <p>Catergory name</p>
+               <p>Kids</p>
               </div>
               </div>
               <div class="product">
                 <div class="product-image">
-                  <!-- product image -->
-                  <img src="./image/B25Runnerneaker.png" alt="">
+                 <a href=""><img src="../image/categories/running.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
-                  <!-- product name -->
-                  <p>Catergory name</p>
+                 <p>Running</p>
               </div>
               </div>
               <div class="product">
                 <div class="product-image">
-                  <!-- product image -->
-                  <img src="../image/B25Runnerneaker.png" alt="">
+                <a href=""> <img src="../image/categories/basketball.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
-                  <!-- product name -->
-                  <p>Catergory name</p>
+                 <p>Basketball</p>
               </div>
               </div>
               
               <div class="product">
                 <div class="product-image">
-                  <!-- product image -->
-                  <img src="./image/B25Runnerneaker.png" alt="">
+                  <a href=""><img src="../image/categories/aesthetic.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
-                  <!-- product name -->
-                  <p>Catergory name</p>
+                 <p>Asthetic</p>
               </div>
               </div>
               <div class="product">
                 <div class="product-image">
-                  <!-- product image -->
-                  <img src="./image/B25Runnerneaker.png" alt="">
+              <a href=""><img src="../image/categories/skateboarding.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
-                  <!-- product name -->
-                  <p>Catergory name</p>
-              </div>
-              </div>
-              <div class="product">
-                <div class="product-image">
-                  <!-- product image -->
-                  <img src="./image/B25Runnerneaker.png" alt="">
-                </div>
-                <div class="product-name">
-                  <!-- product name -->
-                  <p>Catergory name</p>
-              </div>
-              </div>
-              <div class="product">
-                <div class="product-image">
-                  <!-- produc.t image -->
-                  <img src="../image/B25Runnerneaker.png" alt="">
-                </div>
-                <div class="product-name">
-                  <!-- product name -->
-                  <p>Catergory name</p>
-              </div>
-              </div>
-              <div class="product">
-                <div class="product-image">
-                  <!-- product image -->
-                  <img src="../image/B25Runnerneaker.png" alt="">
-                </div>
-                <div class="product-name">
-                  <!-- product name -->
-                  <p>Catergory name</p>
+                 <p>Skateboarding</p>
               </div>
               </div>
             </div>
-        
-            <h1 class="product-heading">Brands</h1>
-            <div class="product-brands ">
-              
-              <!-- product brands -->
+               <!-- product brands -->
+            <h1 class="product-heading" data-aos="zoom-out-right" data-aos-duration="1000">Brands</h1>
+            <div class="product-brands " data-aos="zoom-in" data-aos-duration="1000">
               <div class="product">
                 <div class="product-image">
-                  <!-- product image -->
-                  <img src="../image/brands/Adidas.png" alt="">
+                  <a href=""><img src="../image/brands/Adidas.png" alt=""></a>
                 </div>
                 <div class="product-name">
-                  <!--Brand name -->
                   <p>Adidas</p>
               </div>
               </div>
               <div class="product">
                 <div class="product-image">
-                  <!-- product image -->
-                  <img src="./image/brands/Dior.png" alt="">
+                  <a href=""><img src="../image/brands/Dior.png" alt=""></a>
                 </div>
                 <div class="product-name">
-                  <!--Brand name -->
                   <p>Dior</p>
               </div>
               </div>
               <div class="product">
                 <div class="product-image">
-                  <!-- product image -->
-                  <img src="./image/brands/Converse.png" alt="">
+                  <a href=""><img src="../image/brands/Converse.png" alt=""></a>
                 </div>
                 <div class="product-name">
-                  <!--Brand name -->
-                  <p>Converse</p>
+                <p>Converse</p>
               </div>
               </div>
               <div class="product">
                 <div class="product-image">
-                  <!-- product image -->
-                  <img src="./image/brands/New-Balance.png" alt="">
+                 <a href=""><img src="../image/brands/New-Balance.png" alt=""></a>
                 </div>
                 <div class="product-name">
-                  <!--Brand name -->
-                  <p>New Balance</p>
+                 <p>New Balance</p>
               </div>
               </div>
               <div class="product">
                 <div class="product-image">
-                  <!-- product image -->
-                  <img src="../image//brands/nike.png" alt="">
+                <a href=""> <img src="../image//brands/nike.png" alt=""></a>
                 </div>
                 <div class="product-name">
-                  <!--Brand name -->
-                  <p>Nike</p>
+                 <p>Nike</p>
               </div>
               </div>
               <div class="product">
                 <div class="product-image">
-                  <!-- product image -->
-                  <img src="../image/brands/Reebok.png" alt="">
+                  <a href=""><img src="../image/brands/Reebok.png" alt=""></a>
                 </div>
                 <div class="product-name">
-                  <!--Brand name -->
                   <p>Reebok</p>
               </div>
               </div>
               <div class="product">
                 <div class="product-image">
-                  <!-- product image -->
-                  <img src="../image/brands/vans.png" alt="">
+                   <a href=""><img src="../image/brands/vans.png" alt=""></a>
                 </div>
                 <div class="product-name">
-                  <!--Brand name -->
                   <p>Vans</p>
               </div>
               </div>
@@ -408,10 +433,85 @@ rel="stylesheet">
 
   <footer>
     <div class="container">
-      footer
+      <div class="row">
+         <div class="logo">
+       <a href=""> <img src="../image/icons/logo1.png" alt=""></a>
+         </div>
+         <div class="links">
+          <div class="link">
+            <div class="about_us">
+              <div class="">
+                <h2 class="footer-heading">About Us</h2>
+             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, reprehenderit!</p>
+              </div>
+             <div class="link">
+              <div class="contact_us">
+              <h2 class="footer-heading">Contact Us</h2>
+              <div class="phone">
+                <img src="../image/icons/icon-phone.svg" alt="">
+               <a href="">Phone: +1-543-123-4567</a>
+             </div>
+             <div class="email">
+               <img src="../image/icons/icon-email.svg" alt="">
+             <a href=""> example@fylo.com</a>
+            </div>
+           </div>
+          </div>
+        </div>
+          </div>
+
+          <div class="link">
+            <div class="information">
+              <h2 class="footer-heading">information</h2>
+              <li><a href="">About Us</a></li>
+              <li><a href="">More Search</a></li>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Testimonals</a></li>
+              <li><a href="">Events</a></li>
+            </div>
+          </div>
+
+          <div class="link">
+            <div class="helpful-links">
+              <h2 class="footer-heading">helpful Links</h2>
+              <li><a href="">Services</a></li>
+              <li><a href="">Supports</a></li>
+              <li><a href="">Terms</a></li>
+              <li><a href="">privacy Policy</a></li>
+             </div>
+          </div>
+
+          <div class="link input">
+            <p class="info">Subscribe More Info</p>
+            <form >
+              <input type="text" placeholder="Enter your Email" required>
+           <div class="button">
+            <button>Subscribe</button>
+           </div>
+            </form>
+          </div>
+         </div>
+
+         <div class="line"></div>
+
+         <div class="link_icons">
+          <a href=""><i class='bx bxl-facebook'></i></a>
+          <a href=""><i class='bx bxl-twitter' ></i></a>
+          <a href=""><i class='bx bxl-instagram'></i></a>
+          <a href=""><i class='bx bxl-google-plus'></i></a>
+          
+        </div>
+      </div>
     </div>
   </footer>
   
   <script src="../js/function.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
+
+<?php 
+  session_abort(); 
+?>

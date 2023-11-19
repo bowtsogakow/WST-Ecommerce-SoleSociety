@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -193,6 +194,7 @@ header .link a:hover {
   </style>
 </head>
 <body>
+
   <header>
     <div class="container">
       <div class="row">
@@ -209,13 +211,15 @@ header .link a:hover {
         </div>
         <div class="link">
           <ul>
-            <li><a href="#">Sign up</a></li>
-            <li><a href="login.html">Log in</a></li>
+            <li><a href="signup.php">Sign up</a></li>
+            <li><a href="login.php">Log in</a></li>
           </ul>
         </div>
       </div>
     </div>
   </header>
+
+  
   <div class="wrapper">
     <div class="form-box login">
       <h2>Sign Up</h2>
@@ -255,29 +259,25 @@ header .link a:hover {
   $email; 
   $password;
   $status; 
+  
 
   if($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["Username"];
     $email = $_POST["Email"];
     $password = $_POST["password"];
 
-    $status = SignUp($username, $email, $password); 
-    
+    $status_code = SignUp($username, $email, $password); 
+    $status_message; 
+
+    if($status_code == 0){
+      $status_message = "User succesfully registered"; 
+      $_SESSION['ID'] = login($email, $password, $password); 
+    }else if($status_code == 1){
+      $status_message = "Username or Email already exists"; 
+    }
+    echo "<script> alert('$status_message'); window.location.href = 'index.php';</script>";
     }
 ?>
-
-<script> 
-
-    
-     document.getElementById("SignUpForm").addEventListener('submit', function(event) {
-        // Prevent the default form submission behavior
-        // Show an alert when the form is submitted
-        
-        alert("<?php echo $status; ?>");
-        console.log(text);
-      });
-        
-  </script>
 
 <script>
   const showPass = document.getElementById("showPassword");

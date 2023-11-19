@@ -23,7 +23,7 @@ function closeDB(){
     $conn->close();
 }
 
-# checks wether username or email already exists, returns 1 if it exists
+# checks wether username or email already exists, returns id or 0 if user does not exist
 function checkExistingUser($user, $email){ 
     global $conn;
 
@@ -42,28 +42,20 @@ function checkExistingUser($user, $email){
 
 }
 
-function LogIn($Email, $InputPassword, $ConfirmPassword){
-
-    if($InputPassword != $ConfirmPassword){
-        return 2; 
-    }
-    else if($InputPassword == $ConfirmPassword){
+function LogIn($Email, $InputPassword, $ConfirmPassword) {
+    if ($InputPassword != $ConfirmPassword) {
+        return -2; // Passwords do not match
+    } else {
         OpenDB(); 
-        global $conn;
-        $sql_query = "SELECT * FROM useraccount WHERE Email = ? AND Password = ?"; 
+        global $conn;  
+        $sql_query = "Select id FROM useraccount WHERE Email = ? AND Password = ?"; 
         $stmt = $conn->prepare($sql_query); 
-        $stmt->bind_param('ss', $Email, $InputPassword); 
+        $stmt->bind_param('ss', $Email, $InputPassword);  
         $stmt->execute(); 
-        $result = $stmt->get_result();
-
-        if ($result->num_rows > 0){
-            return 1; 
-        } 
-        else {
-            return 0; 
-        }
+        $stmt->bind_result($user_id); 
+        $stmt->fetch();
+        return $user_id; 
     }
-
 }
 
 # Write user sign up info to the Database 
@@ -78,9 +70,9 @@ function SignUp($new_user, $new_email, $new_pass){
         $stmt = $conn->prepare($sql_query);
         $stmt->bind_param('sss', $new_user, $new_email, $new_pass); 
         $stmt->execute(); 
-        return "User Successfully created";
+        return 0;
     }else if ($existing >= 1){
-        return "Username or Email already exists";
+        return 1;
 
     }
     
