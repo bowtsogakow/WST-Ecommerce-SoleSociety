@@ -90,7 +90,7 @@ rel="stylesheet">
               </div>
               <div class="link">
                 <ul>
-                  <li><a href="">Shop</a></li>
+                  <li><a href="product_list.php">Shop</a></li>
                   <li><a href="">Cart</a></li>
                   <li><a href="">Foverite</a></li>
                   <li><a href="">Account</a></li>
@@ -103,7 +103,7 @@ rel="stylesheet">
              </div>
              <div class="dropdown_menu" id="dropDownMenu">
               <ul>
-                  <li><a href="">Shop</a></li>
+                  <li><a href="product_list.php">Shop</a></li>
                   <li><a href="">Cart</a></li>
                   <li><a href="">Foverite</a></li>
                   <li><a href="">Account</a></li>
@@ -271,6 +271,33 @@ rel="stylesheet">
   AOS.init();
 </script>
 </body>
+
+  <?php 
+    include "DBQuery.php"; 
+    $username; 
+    $email; 
+    $password; 
+
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+      $username = $_POST["Username"];
+      $email = $_POST["Email"]; 
+      $password = $_POST["password"]; 
+      $status_message; 
+      
+      $status_code = SignUp($username, $email, $password); 
+
+      if ($status_code == 1){
+        $status_message = "Username or email already exists"; 
+      }
+      else if ($status_code == 0){
+        $status_message = "User successfully created"; 
+      }
+      echo "<script>  alert('$status_message'); window.location.href = 'index.php';</script>";
+    }
+
+    
+
+  ?> 
 
 <script>
   const showPass = document.getElementById("showPassword");
