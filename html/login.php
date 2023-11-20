@@ -92,7 +92,7 @@ rel="stylesheet">
               </div>
               <div class="link">
                 <ul>
-                  <li><a href="">Shop</a></li>
+                  <li><a href="product_list.php">Shop</a></li>
                   <li><a href="">Cart</a></li>
                   <li><a href="">Foverite</a></li>
                   <li><a href="">Account</a></li>
@@ -105,7 +105,7 @@ rel="stylesheet">
              </div>
              <div class="dropdown_menu" id="dropDownMenu">
               <ul>
-                  <li><a href="">Shop</a></li>
+                  <li><a href="product_list.php">Shop</a></li>
                   <li><a href="">Cart</a></li>
                   <li><a href="">Foverite</a></li>
                   <li><a href="">Account</a></li>
