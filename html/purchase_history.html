@@ -10,32 +10,32 @@
 </head>
 <body>
     <div class="title">
-        <img src="#" alt=" ">
+        <ion-icon name="cart-outline"></ion-icon>
         <p>PURCHASE HISTORY</p>
     </div>
     <div class="border">
         <main class="purchaseHistory-table">
             <div class="topMenu">
                 <div id="searchBar">
-                    <img src="#" alt=" ">
+                    <ion-icon name="search"></ion-icon>
                     <input type="text" placeholder="Search">
                 </div>
                 <div class="filter">
                     <p>Filter</p>
                     <div style="display: flex; gap: 1rem;">
                         <p>Portially Receive Orders</p>
-                        <img src="" alt=" ">
+                        <h1>&#10095;</h1>
                     </div>
                 </div>
                 <div class="pages" style="display: flex; gap: 0.5rem;">
                     <div  class="pages-button">
-                        <img src="" alt=" ">
+                        <button>&#10094;</button>
                         <p>1-10</p>
-                        <img src="" alt=" ">
+                        <button>&#10095;</button>
                     </div>
                     <div class="pages-all">
                         <p>10/Page</p>
-                        <img src="" alt="">
+                        <h1>&#10095;</h1>
                     </div>
                 </div>
             </div>
@@ -47,11 +47,11 @@
                 <p>Purchase Order</p>
                 <p>Delivery Date</p>
                 <p>Amount</p>
-                <img src="#" alt=" ">
+                <ion-icon name="settings-outline"></ion-icon>
             </div>
             <div class="purchaseHistory-list">
                 <ol>
-                    <li>
+                    <li class="list-item">
                         <div style="display: flex; gap: 1rem;">
                             <input type="checkbox">
                             <p id="date">06/02/2023</p>
@@ -59,12 +59,15 @@
                         <p id="purchaseOrder">PO-00123456</p>
                         <p id="deliveryDate">07/12/2023</p>
                         <p id="amount">₱264</p>
-                        <img src="#" alt=" ">
+                        <label class="more-btn"><p></p></label>
                     </li>
                 </ol>
             </div>
         </main>
     </div>
     
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>

@@ -160,7 +160,7 @@ rel="stylesheet">
   </header>
 
 
-  <div class="wrapper">
+  <div class="wrapper" data-aos="flip-left"  data-aos-duration="1000">
     <div class="form-box login">
       <h2>Sign Up</h2>
           <form action = "signup.php" method="post" id = "SignUpForm">
@@ -268,6 +268,9 @@ rel="stylesheet">
     </div>
   </div>
 </footer>
+<script>
+  AOS.init();
+</script>
 </body>
 
   <?php 

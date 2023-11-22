@@ -39,7 +39,7 @@ rel="stylesheet">
           <div class="row">
             <div class="flex">
              <a href="../html/index.html">
-              <a href="./index.html">
+              <a href="../index.html">
                 <div class="logo">
                 <img src="../image/icons/logo2.png" alt="">
                  </div></a></a>
