@@ -694,15 +694,15 @@ function CartHeader(){
       </div>
       <div class="link">
         <ul>
-          <li><a href="">Shop</a></li>
-          <li><a href="">Cart</a></li>
-          <li><a href="">Favorite</a></li>
+          <li><a href="Product_item.php">Shop</a></li>
+          <li><a href="Shopping_Cart.php">Cart</a></li>
+          <li><a href="faverite.php">Favorite</a></li>
           <li>
             <div class="dropdown">
               <a id="accountDropDown">Account</a>
               <div id="dropdownContent" class="dropdown-content">
-                <a href="#">Purchase History</a>
-                <a href="#">User Profile</a>
+                <a href="purchase_history.php">Purchase History</a>
+                <a href="userprofile.php">User Profile</a>
                 <a href="#">Log Out</a>
               </div>
             </div>
@@ -721,7 +721,7 @@ function CartHeader(){
           <li><a href="">Cart</a></li>
           <li><a href="">Favorite</a></li>
           <li><a href="">Purchase History</a></li>
-          <li><a href="">User Profile</a></li>
+          <li><a href="userprofile.php">User Profile</a></li>
           <li><a href="">Log Out</a></li>
        </ul>
      </div>

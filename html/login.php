@@ -3,26 +3,27 @@
   ?>
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- FONTS -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FONTS -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Poppins -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" 
-rel="stylesheet">
-  <link rel="stylesheet" href="../css/style_login.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="../image/icons/logo2.png" >
-  
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src=".https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <title>Sole Society</title>
+      <!-- Poppins -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" 
+      rel="stylesheet">
+        <link rel="stylesheet" href="../css/style_login.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="../image/icons/logo2.png" >
+        
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src=".https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <title>Sole Society</title>
 </head>
 
 <body>
@@ -79,7 +80,7 @@ rel="stylesheet">
       <button type="submit" class="btn1">Login</button>
        </form>
         <div class="forgot-password-wrapper">
-          <a href="#">Forgot Password</a>
+          <a href="forgotpassword.php">Forgot Password</a>
         </div>
        <div class="create">
         <a href="signup.php"> <button type="submit" class="btn2">Create new account</button></a>
@@ -171,4 +172,9 @@ toggleBtn.addEventListener('click', ()=> {
   }
 });
 </script>
+<script src="../js/function.js"></script>
 </html>
+
+<?
+  $_SESSION['']
+?>

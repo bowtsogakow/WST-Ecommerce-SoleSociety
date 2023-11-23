@@ -81,9 +81,8 @@ section thead th{
   
 }
 section .quantity-btn {
-  margin-top: 45px;
-
-  display: flex;
+    margin-top: 118px;
+    display: flex;
 }
 section tr .total{
   text-align: center;
@@ -272,6 +271,12 @@ cursor: pointer;
 section.PlaceOrder .buttons .flex button:hover{
 background-color: #EB5E28;
 }
+.parent p{
+  text-align: center;
+  color: #FDCE29;
+  font-size: 50px;
+  font-weight: bold;
+}
 
 .dropdown {
     position: relative;
@@ -303,6 +308,8 @@ background-color: #EB5E28;
     visibility: visible;
   }
 
+
+
 	<?php
   echo AddCss(); 
   ?>
@@ -325,12 +332,8 @@ CartHeader()
       
     if($CartValue == 0 ){
 
-      echo "No item found";  
+      echo "<div class='parent'><p> No item found</p></div>";  
     }
-
-
-
-
 
 
     else {
@@ -417,66 +420,7 @@ CartHeader()
           
         </div>
     </div>
-</section>
-<section class='PlaceOrder' id='placeOrder'>
-<div class='row'>
-  <div class='container' >
-  <div class='close'>
-<span id='closeButton' onclick='closePlaceOrder()'>X</span>
-</div>
-       <div class='buttons'>
-       <div class='paymentmethod'>
-        <div class='Pm'>
-          <p>Payment Method:</p>
-        </div>
-        <div class='Cash'>
-          <p>Cash On Delivery</p>
-        </div>
-        <div class='lick'>
-        <p>CHANGE</p>
-        </div>
-       </div>
 
-      <div class='line'></div>
-
-       <div class='flex'>
-        <div class='total'>
-        <p>Subtotal:</p>
-        </div>
-        <div class='price'>
-          <p>&#8369;224</p>
-        </div>
-       </div>
-
-       <div class='line'></div>
-
-       <div class='flex'>
-        <div class='shippingtotal'>
-        <p>Shipping Subtotal:</p>
-        </div>
-        <div class='price'>
-          <p>&#8369;224</p>
-        </div>
-       </div>
-
-       <div class='line'></div>
-
-       <div class='flex'>
-        <div class='total'>
-        <p>Shipping Subtotal:</p>
-        </div>
-        <div class='boldprice'>
-          <h1>&#8369;224</h1>
-        </div>
-        <div class='button'>
-          <button>Place Order</button>
-        </div>
-       </div>
-       </div>
-  </div>
-  </div>
-
-</section>
 
     <script>
         const quantityInputs = document.querySelectorAll('.quantity');
@@ -581,15 +525,70 @@ CartHeader()
         dropDownMenu.classList.add('open');
       }
     });
+    document.addEventListener('DOMContentLoaded', function() {
+      const navigationType = performance.getEntriesByType('navigation')[0].type;
+  
+      if (navigationType === 'reload') {
+          closePlaceOrder();
+      }
+  });
+  
+  function showPlaceOrder() {
+      document.getElementById('placeOrder').style.display = 'block';
+      document.getElementById('closeButton').style.display = 'inline';
+  }
+  
+  function closePlaceOrder() {
+      document.getElementById('placeOrder').style.display = 'none';
+      document.getElementById('closeButton').style.display = 'none';
+  }
+  
   
     </script>"; }?>
+    
 </main>
-<footer>
+<footer id="pooter">
   <?php
   echo AddFooter();
   ?>
 </footer>
 
+
+<!-- shopping cart dropdown -->
+<script>
+ const toggleBtn = document.getElementById('menuIcon');
+  const dropDownMenu = document.getElementById('dropDownMenu');
+
+  toggleBtn.addEventListener('click', ()=> {
+    if(dropDownMenu.classList.contains('open')) {
+      dropDownMenu.classList.remove('open');
+    }
+    else {
+      dropDownMenu.classList.add('open');
+    }
+  });
+
+  function toggleDropdown() {
+    var dropdown = document.getElementById("dropdownContent");
+    if (dropdown.style.display === "none") {
+      dropdown.style.display = "block";
+    } else {
+      dropdown.style.display = "none";
+    }
+  }
+
+  const accountDropDown = document.getElementById('accountDropDown');
+
+  accountDropDown.addEventListener('click', () =>{
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    if(!dropdownContent.classList.contains('active')) {
+      dropdownContent.classList.add('active');
+    }else {
+      dropdownContent.classList.remove('active');
+    }
+  });
+</script>
 <script src="../js/function.js"></script>
 </body>
 

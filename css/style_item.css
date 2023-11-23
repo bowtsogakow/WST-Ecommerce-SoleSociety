@@ -66,6 +66,9 @@ label,#amount{
         
 
 }
+#pooter{
+  height: 800px;
+}
 /* .chk{
     width:70%;
     height: 70%;
@@ -199,6 +202,7 @@ body{
     display: inline-block;
     border: none;
     width: 60%;
+    box-sizing: content-box;
 height: 20px;
     font-family:'Poppins', sans-serif;
     text-align: center;

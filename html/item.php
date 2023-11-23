@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php
 
 // if (isset($_GET['myVariable'])) {
@@ -25,7 +26,7 @@ function getName(){
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $database = "soul_society_inventory"; 
+    $database = "solesocietyDB"; 
 
     $conn = new mysqli($servername, $username, $password, $database);
 
@@ -66,7 +67,7 @@ function getName(){
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $database = "soul_society_inventory"; 
+        $database = "solesocietyDB"; 
     
         $conn = new mysqli($servername, $username, $password, $database);
     
@@ -108,7 +109,7 @@ function getName(){
             $servername = "localhost";
             $username = "root";
             $password = "";
-            $database = "soul_society_inventory"; 
+            $database = "solesocietyDB"; 
         
             $conn = new mysqli($servername, $username, $password, $database);
         
@@ -150,7 +151,7 @@ function getName(){
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $database = "soul_society_inventory"; 
+                $database = "solesocietyDB"; 
             
                 $conn = new mysqli($servername, $username, $password, $database);
             
@@ -192,7 +193,7 @@ function getName(){
                     $servername = "localhost";
                     $username = "root";
                     $password = "";
-                    $database = "soul_society_inventory"; 
+                    $database = "solesocietyDB"; 
                 
                     $conn = new mysqli($servername, $username, $password, $database);
                 
@@ -269,7 +270,7 @@ function getName(){
                         $servername = "localhost";
                         $username = "root";
                         $password = "";
-                        $database = "soul_society_inventory"; 
+                        $database = "solesocietyDB"; 
                     
                         $conn = new mysqli($servername, $username, $password, $database);
                     
@@ -349,7 +350,7 @@ function getName(){
                             $servername = "localhost";
                             $username = "root";
                             $password = "";
-                            $database = "soul_society_inventory"; 
+                            $database = "solesocietyDB"; 
                         
                             $conn = new mysqli($servername, $username, $password, $database);
                         
@@ -382,15 +383,33 @@ function getName(){
 
 
 <head>
-
+<?php include "Headercopy.php";
+		AddHead(); 
+    ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="../css/style_item.css">
-</head>
-<body>
 
+<style>
+  body{
+    background-color: #FFFCF2;
+  }
+  <?php
+  echo AddCss(); 
+  ?>
+</style>
+</head>
+<body  style ="background-color:#FFFCF2">
+<main>
+  <header>
+  <?php
+CartHeader();
+
+?>
+  </header>
+</main>
 <div id="parent">
         <div id ="name">
         <?php getName(); ?>
@@ -440,15 +459,20 @@ function getName(){
       </div>
 
       <div id="btnss">
+
+         <?php 
+            $_SESSION['productID'] = $_GET['myVariable'];
+          ?>
          
           <div id="carton"  class="box">
-            <form action="" method ="post">
+            <form action="Favorite.php" method ="post">
+            <input type = hidden name = "productID">
           <button class="button-30" role="button">Favorite</button>
           </form>
           </div>
           
           <div id="fav" class="box">
-          <form action="" method ="post">
+          <form action="AddToCart.php" method ="post">
           <button class="button-30" role="button">Add to cart</button>
           </form>
           </div>
@@ -476,11 +500,17 @@ function getName(){
   </div> 
 
 </div>
+<footer id ="pooter">
+  <?php
+  echo AddFooter();
+  ?>
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- <script src="item_js.js"> </script> -->
 
-
+<script src="../js/function.js"></script>
 
 </body>
 </html>
+
