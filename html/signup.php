@@ -168,7 +168,7 @@ rel="stylesheet">
         <!-- Username -->
               <div class="input-box label-username">
                 <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                <input type="text" name="Username">
+                <input type="text" name="Username" required>
                 <label>Username</label>
               </div>
             <!--Email-->
