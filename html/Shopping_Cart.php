@@ -290,22 +290,25 @@ background-color: #EB5E28;
   <?php
     include "DBQuery.php"; 
     $CartValue = getList_Cart($_SESSION["ID"]); 
-    $count = count($CartValue); 
-    $productID = []; 
-    for ($i = 0; $i < $count; $i++){
-      $productID[$i] = getProduct($CartValue[$i]); 
-      echo $productID[$i] . "<br>"; 
-    }
 
-     
-
-    
-    if($count < 0 ){
+      
+    if($CartValue == 0 ){
 
       echo "No item found";  
     }
 
+
+
+
+
+
     else {
+      $count = count($CartValue); 
+      $productID = []; 
+      for ($i = 0; $i < $count; $i++){
+        $productID[$i] = getProduct($CartValue[$i]); 
+       
+      }  
       echo "<section class='car'>
     <div class='container'>
         <div class='row'>
