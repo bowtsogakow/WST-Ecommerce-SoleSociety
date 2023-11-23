@@ -5,7 +5,7 @@ body{
 #item{
     
     width: 93.2%;
-    margin-top: 50px;
+    margin-top: 140px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
@@ -23,7 +23,7 @@ height: 300px;
     width: 80%;
 }
 
-/* div{
+div{
 
 
 
@@ -31,24 +31,34 @@ height: 300px;
     border-color: red;
 
 
-} */
+}
 #parent{
 
     display: flex;
+   
     margin-bottom: 20px;
-    grid-gap: 10px;
+    
 }
 #filter{
-    width: 15%;
-    height: 90vh;
+    width: 20%;
+    height: 70vh;
     position: fixed;
+    margin-top: 80px;
     background-color: #403D39;
     border: 1px solid;
     padding: 20px;
+  
     transition: transform 0.3s ease;
 }
 
+.checkbox-wrapper-14 {
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.checkbox-column {
+    flex: 2; /* Adjust the width of each column as needed */
+}
   
 .numericInput{
  width: 70px;
@@ -63,10 +73,11 @@ height: 300px;
   
     justify-content: flex-end;
     display: flex;
-    position: fixed;
+    float: right; 
     text-align: right;
     width: 160vh;
     height: 40px;
+    margin-top: 95px;
     background-color: #FFFCF2;
 }
 
