@@ -1,3 +1,5 @@
+ 
+
 <?php
 // Connect to the database
 $servername = "localhost";
@@ -130,7 +132,7 @@ function getProductInfo($ID){
     global $conn; 
     $Info = []; 
     
-    $sql_query = "SELECT Name, Price, filename FROM shoe_inventory WHERE id = ?"; 
+    $sql_query = "SELECT Name, Price, filename, id FROM shoe_inventory WHERE id = ?"; 
     $stmt = $conn->prepare($sql_query); 
     $stmt->bind_param('s', $ID); 
     $stmt->execute(); 
@@ -141,6 +143,7 @@ function getProductInfo($ID){
             $Info[0] = $row["Name"]; 
             $Info[1] = $row["Price"]; 
             $Info[2] = $row["filename"];
+            $Info[3] = $row["id"]; 
         }
     } else {
         return 0; 
@@ -214,14 +217,15 @@ function removeFromCart($ID){
 //ORDER
 
 // Input user id, and mag aadd ng order 
-function addOrder($userID){
+function addOrder($userID, $productID, $price, $quantity){
     OpenDB(); 
     global $conn;
 
     $date = date("Y-m-d"); 
-    $sql_query = "INSERT INTO orders(user_id, order_date) VALUES (?, ?)"; 
+    $sql_query = "INSERT INTO orders(userId, productId, quantity, price, order_date) VALUES (?, ?, ?, ?, ?)"; 
     $stmt = $conn->prepare($sql_query);
-    $stmt->bind_param('ss', $userID, $date); 
+    $stmt->bind_param('ss', $userID, $productID, $quantity, $price, $date); 
+    removeFromCart($productID); 
     $result = $stmt->execute(); 
     return $result;
 
@@ -337,18 +341,47 @@ function getProductFavorite($ID){
 
 function addRow($product){
       
-    echo "<tr class='product1'>
-    <td><img class='item-img' src='../WSTShoesNoBackground/$product[2]' alt='Apple'></td>
-    <td class='name'>$product[0]</td>
-    <td class='price'>&#8369; $product[1]</td>
-    <td class='quantity-btn'>
-        <button onclick='updateQuantity(this, -1)'>-</button>
-        <input value='1' min='1' class='quantity'>
-        <button onclick='updateQuantity(this, 1)'>+</button>
-    </td>
-    <td class='total'>---</td>
-    <td><input type='checkbox' class='add-to-cart'></td>";
+     
+    echo "
+        
+        <tr class='product1'>
+        <td><img class='item-img' src='../WSTShoesNoBackground/$product[2]' alt='Apple'></td>
+        <td class='name'>$product[0]</td>
+        <td class='price'>&#8369; $product[1]</td>
+        <td class='quantity-btn'>
+            <button onclick='updateQuantity(this, -1)'>-</button>
+            <input value='1' min='1' id= 'quantity2' name = 'quantity2' class='quantity' form='checkoutForm' required>
+            <button onclick='updateQuantity(this, 1)'>+</button>
+        </td>
+        <td class='total'>---</td>
+        <form id = 'checkoutForm' action = 'checkout.php' method = POST> 
+       
+        <input type = hidden name = productID value = $product[3]>
+        <td><input type='submit' class='add-to-cart' value='Check Out' style='
+        padding: 0.5rem 1rem;
+        background-color: #e1774d;
+        border: none;
+        color: white;
+        cursor: pointer;
+        '></form></td></tr>
+        
+        <script> 
+        var sourceInput = document.getElementById('qty$product[3]');
+        var destinationInput = document.getElementById('2qty$product[3]');
+       
+        destinationInput.value = sourceInput.value;
+        </script> 
+        " 
+        ;
 
+  }
+
+  function checkOutRow($Product, $Qty){
+        $Total = $Product[1] * $Qty; 
+        echo "<div class='grid-item grid-item-1'>$Product[0]  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  $Qty</div>
+        <div class='grid-item grid-item-1'>Price:  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp&nbsp &nbsp &nbsp$Product[1]</div>    
+        <div class='grid-item total'>Total  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  $Total </div> ";
+         
   }
 
 

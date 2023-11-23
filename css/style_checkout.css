@@ -1,0 +1,151 @@
+*{
+  font-family: "Poppins", sans-serif;
+}
+
+#pnumber, #country, #province{
+  display:block;
+}
+
+#fname, #lname, #municipality, #zip{
+  height: 30px;
+  width:260px;
+}
+
+#pnumber, #country, #province{
+  height: 30px;
+  width: 550px;
+}
+
+#fname, #lname, #municipality, #zip, #pnumber, #country, #province{
+  margin: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shipping-info{
+  margin-left: 140px;
+  display: inline-block;
+  margin-top: 80px;
+  margin-right: 100px;
+}
+
+.cart{
+  display: inline-block;
+  margin-right: 200px;
+  margin-top: 100px;
+}
+
+.cart h3{
+  display: inline-block;
+}
+
+#qty{
+  display:inline-block;
+  border-radius: 10px;
+  background-color: #EB5E28;
+  width: 50px;
+  text-align: center;
+  margin-left: 230px;
+}
+
+
+.payment-options {
+  display: flex;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border: none; /* Resetting the border */
+  border-radius: 16px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button.selected {
+  border: 3px solid black;
+  color: white;
+}
+
+#cash-on-delivery, #other {
+  height: 40px;
+  width: 180px;
+  background-color: #5d5c59;
+}
+#checkout{
+  margin-top: 20px;
+}
+#credit-card {
+  height: 40px;
+  width: 180px;
+  background-color: #EB5E28;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 380px;
+  font-size: 18px;
+}
+
+.grid-item-1, .grid-item-2,.grid-item-3, .grid-item-4{
+  border: 2px solid black;
+  padding: 6px;
+}
+
+.total{
+  border: 2px solid black;
+  padding: 6px;
+  background-color: #EB5E28;
+}
+
+.grid-item-2,.grid-item-4{
+  background-color: #5d5c59;
+}
+.grid-item-5{
+  background-color: #EB5E28;
+}
+
+
+
+.hidden {
+  display: none;
+} 
+
+#continueToCheckout {
+  display: block;
+  height: 40px;
+  width: 550px;
+  background-color: #EB5E28;
+  margin-top:30px;
+}
+
+
+#securityCode, #expiration{
+  display: inline-block;
+  height: 30px;
+  width:260px;
+}
+
+#fullName, #cardNumber{
+  display: block;
+  margin-bottom: 10px;
+  height: 30px;
+  width: 550px;
+}
+
+#expiration{
+  margin-right: 20px;
+}
+
+#credit-card-form{
+  width: 560px;
+  margin-left: 140px;
+  margin-top: 40px;
+}
+

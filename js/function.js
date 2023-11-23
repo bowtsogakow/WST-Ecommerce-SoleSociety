@@ -79,3 +79,38 @@ accountDropDownBurger.addEventListener('click', () =>{
     dropdownContentBurger.classList.remove('active');
   }
 });
+
+function selectPaymentOption(optionId) {
+  // Check if the clicked button is the credit card button
+  const isCreditCardButton = optionId === 'credit-card';
+
+  // Get the previously selected button
+  let previouslySelectedButton = document.querySelector('.payment-options button.selected');
+
+  // Remove the 'selected' class from the previously selected button, but only if it's not the credit card button
+  if (previouslySelectedButton && !isCreditCardButton) {
+    previouslySelectedButton.classList.remove('selected');
+  }
+
+  // Select the clicked button
+  const selectedButton = document.getElementById(optionId);
+  selectedButton.classList.add('selected');
+}
+
+function selectPaymentOption(option) {
+  const paymentOptions = document.querySelectorAll('.payment-options button');
+  const creditCardForm = document.getElementById('credit-card-form');
+
+  paymentOptions.forEach(button => button.classList.remove('selected'));
+
+  if (option === 'cash-on-delivery') {
+    document.getElementById('cash-on-delivery').classList.add('selected');
+    creditCardForm.classList.add('hidden');
+  } else if (option === 'credit-card') {
+    document.getElementById('credit-card').classList.add('selected');
+    creditCardForm.classList.remove('hidden');
+  } else if (option === 'other') {
+    document.getElementById('other').classList.add('selected');
+    creditCardForm.classList.add('hidden');
+  }
+}

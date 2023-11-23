@@ -373,46 +373,7 @@ CartHeader()
                 }
              
         echo "</tbody>
-            </table>
-              <!-- checkout -->
-            <div class='checkout-buttons'>
-               <div class='div1'>
-               <div class='flex'>
-                <div class='voucher'>
-                  <p>voucher:</p>
-                </div>
-                <div class='select'>
-                  <p > Select or Enter code</p>
-                </div>
-               </div>
-            </div>
-            <div class='line'></div>
             
-             <div class='div2'>
-              <div class='checkbox'>
-                <input type='checkbox'>
-              </div>
-              <div class='select'>
-                <p>Seclect All(3)</p>
-              </div>
-             <div class='delete'>
-              <button onclick='deleteSelected()'>Delete Selected</button>
-             </div>
-             </div>
-             <div class='line'></div>
-            
-              <div class='div3'>
-                <div class='totals'>
-                  <p>total (0 item): </p>
-                </div>
-                  <div class='total'>
-                    <h1>	&#8369;200</h1>
-                  </div>
-                <div class='button'>
-                  <button id='checkout' onclick='showPlaceOrder()'>Checkout</button>
-
-              </div>
-              
               
           </div>
        </table>
@@ -420,7 +381,66 @@ CartHeader()
           
         </div>
     </div>
+</section>
+<section class='PlaceOrder' id='placeOrder'>
+<div class='row'>
+  <div class='container' >
+  <div class='close'>
+<span id='closeButton' onclick='closePlaceOrder()'>X</span>
+</div>
+       <div class='buttons'>
+       <div class='paymentmethod'>
+        <div class='Pm'>
+          <p>Payment Method:</p>
+        </div>
+        <div class='Cash'>
+          <p>Cash On Delivery</p>
+        </div>
+        <div class='lick'>
+        <p>CHANGE</p>
+        </div>
+       </div>
 
+      <div class='line'></div>
+
+       <div class='flex'>
+        <div class='total'>
+        <p>Subtotal:</p>
+        </div>
+        <div class='price'>
+          <p>&#8369;224</p>
+        </div>
+       </div>
+
+       <div class='line'></div>
+
+       <div class='flex'>
+        <div class='shippingtotal'>
+        <p>Shipping Subtotal:</p>
+        </div>
+        <div class='price'>
+          <p>&#8369;224</p>
+        </div>
+       </div>
+
+       <div class='line'></div>
+
+       <div class='flex'>
+        <div class='total'>
+        <p>Shipping Subtotal:</p>
+        </div>
+        <div class='boldprice'>
+          <h1>&#8369;224</h1>
+        </div>
+        <div class='button'>
+          <button>Place Order</button>
+        </div>
+       </div>
+       </div>
+  </div>
+  </div>
+
+</section>
 
     <script>
         const quantityInputs = document.querySelectorAll('.quantity');
@@ -502,6 +522,10 @@ CartHeader()
       document.getElementById('closeButton').style.display = 'none';
     }
 
+    
+    
+
+
     const accountDropDown = document.getElementById('accountDropDown');
 
     accountDropDown.addEventListener('click', () =>{
@@ -545,7 +569,6 @@ CartHeader()
   
   
     </script>"; }?>
-    
 </main>
 <footer>
   <?php
@@ -553,42 +576,6 @@ CartHeader()
   ?>
 </footer>
 
-
-<!-- shopping cart dropdown -->
-<script>
- const toggleBtn = document.getElementById('menuIcon');
-  const dropDownMenu = document.getElementById('dropDownMenu');
-
-  toggleBtn.addEventListener('click', ()=> {
-    if(dropDownMenu.classList.contains('open')) {
-      dropDownMenu.classList.remove('open');
-    }
-    else {
-      dropDownMenu.classList.add('open');
-    }
-  });
-
-  function toggleDropdown() {
-    var dropdown = document.getElementById("dropdownContent");
-    if (dropdown.style.display === "none") {
-      dropdown.style.display = "block";
-    } else {
-      dropdown.style.display = "none";
-    }
-  }
-
-  const accountDropDown = document.getElementById('accountDropDown');
-
-  accountDropDown.addEventListener('click', () =>{
-    const dropdownContent = document.querySelector('.dropdown-content');
-
-    if(!dropdownContent.classList.contains('active')) {
-      dropdownContent.classList.add('active');
-    }else {
-      dropdownContent.classList.remove('active');
-    }
-  });
-</script>
 <script src="../js/function.js"></script>
 </body>
 
