@@ -53,7 +53,7 @@
 <body onload = "showItem();">
 
 
- <header><?php CartHeader();?></header>
+ <header id+= "headerIto"><?php CartHeader();?></header>
     <div id="parent">
    
     <div id="filter">
@@ -158,10 +158,7 @@
   
         <div id ="right">
             <div id = "sorting">
-                <div class="checkbox-wrapper-11">
-                    <input id="02-11" type="checkbox" name="r" value="2">
-                    <label for="02-11">Filter</label>
-                  </div>
+                
                 
                 
             <!-- <div class="custom-select"></div> -->
@@ -180,6 +177,12 @@
     
     </div>
  </div>
+
+ <footer id ="footItem">
+
+<?php AddFooter() ?>
+
+ </footer>
  <script src="../js/radio_item.js" defer></script>
     <script src="../js/auto_item.js" defer></script>
     <!-- <script src="getData.js" defer></script> -->

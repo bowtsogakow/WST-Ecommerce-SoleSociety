@@ -57,6 +57,8 @@ function AddCss(){
       padding: 10px 40px;
       background-image: linear-gradient(to right,#252422 , #EB5E28);
       width: 100%;
+      position:fixed;
+      z-index:1;
       
     
     }

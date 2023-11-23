@@ -303,7 +303,7 @@ if (sortOrder === "asc") {
                   // Construct HTML based on each item
                   itemsHTML += `
                   <div class ="list">    
-                      <a href="item.php?myVariable=${item.id}">
+                      <a href="../html/item.php?myVariable=${item.id}">
                       <div class="product">
                       <div id ="imageScr">
                       <img src="../WSTShoesNoBackground/${item.filename}" alt="${item.Name}" id = "shoe_img">
@@ -335,7 +335,7 @@ if (sortOrder === "asc") {
             let itemsHTML = '';
             itemsHTML += `
                       
-                          <p>No Item FOund</p>
+                          <p>No Item Found</p>
                       
                   `;
                   if (errorMessage) {
