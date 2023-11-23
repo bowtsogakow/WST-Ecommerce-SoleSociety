@@ -87,7 +87,6 @@ function getList_Cart($ID){
     global $conn; 
 
     $cart_Id = []; 
-    $i; 
 
     $sql_query = "SELECT id FROM cart WHERE userID = ?"; 
     $stmt = $conn->prepare($sql_query); 

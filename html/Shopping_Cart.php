@@ -271,7 +271,12 @@ cursor: pointer;
 section.PlaceOrder .buttons .flex button:hover{
 background-color: #EB5E28;
 }
-
+main p{
+  text-align: center;
+  color: #FDCE29;
+  font-size: 50px;
+  font-weight: bold;
+}
 
 	<?php
   AddCss(); 
@@ -294,12 +299,8 @@ background-color: #EB5E28;
       
     if($CartValue == 0 ){
 
-      echo "No item found";  
+      echo "<p> No item found</p>";  
     }
-
-
-
-
 
 
     else {

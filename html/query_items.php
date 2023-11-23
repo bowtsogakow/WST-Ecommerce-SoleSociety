@@ -88,7 +88,7 @@ ini_set('display_errors', 1);
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "soul_society_inventory";
+$database = "solesocietyDB";
 
 $conn = new mysqli($servername, $username, $password, $database);
 

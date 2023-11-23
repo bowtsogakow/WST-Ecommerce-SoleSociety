@@ -655,7 +655,7 @@ function CartHeader(){
         <ul>
           <li><a href="">Shop</a></li>
           <li><a href="Shopping_Cart.php">Cart</a></li>
-          <li><a href="">Foverite</a></li>
+          <li><a href="">Favorite</a></li>
           <li><a href="">Account</a></li>
          </ul>
          <div class="menu-icon" id="menuIcon">
