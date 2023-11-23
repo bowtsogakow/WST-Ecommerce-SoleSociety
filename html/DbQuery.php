@@ -201,9 +201,7 @@ function addtoCart($userID, $productID){
         return 0; 
     }
     
-
 }
-
 
 // input cart ID, then removes it 
 function removeFromCart($ID){
@@ -248,7 +246,23 @@ function getLatestOrder($userID){
     closeDb();
 }
 
+function addtoFavorite($userID, $productID){
+    OpenDB(); 
+    global $conn; 
 
+    if ($existing == 0) {
+        $sql_query = "INSERT INTO favorites(UserID, ProductID) VALUES (?, ?)"; 
+        $stmt = $conn->prepare($sql_query);
+        $stmt->bind_param('ss', $userID, $productID); 
+        $InsertStatus = $stmt->execute(); 
+        closeDb();
+        return $InsertStatus; 
+    }
+    else if ($existing > 0) {
+        return 0; 
+    }
+    
+}
 
 ?>
 
