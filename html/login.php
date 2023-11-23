@@ -296,7 +296,7 @@ rel="stylesheet">
     $password2 = $_POST["confirmPassword"];
     $status_message;
     $_SESSION['ID'] = login($email, $password1, $password2); 
-    if($_SESSION['ID'] >= 0){
+    if($_SESSION['ID'] > 0){
       $status_message = "Login Succesfully"; 
     } 
     else if ($_SESSION['ID'] == -1 || $_SESSION['ID'] == -2){
