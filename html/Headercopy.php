@@ -569,7 +569,7 @@ function LoginHeader(){
              </div></a></a>
            <div class="search">
         
-              <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
+              <input type="text" name="search" 
               placeholder="Search products here" autocomplete="off" spellcheck="false">
             </form>
            </div>
@@ -679,12 +679,12 @@ function CartHeader(){
     <div class="row">
       <div class="flex">
        <div class="logo">
-        <img src="../image/icons/logo.png" alt="">
+        <img src="../image/icons/logo2.png" alt="">
        </div>
          <div class="search">
 
         <form>
-            <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
+            <input type="text" name="search" 
             placeholder="Search products here" autocomplete="off" spellcheck="false">
           </form>
 
@@ -718,9 +718,9 @@ function CartHeader(){
           <li><a href="">Shop</a></li>
           <li><a href="">Cart</a></li>
           <li><a href="">Favorite</a></li>
-          <li><a>Purchase History</a></li>
-          <li><a>User Profile</a></li>
-          <li><a>Log Out</a></li>
+          <li><a href="">Purchase History</a></li>
+          <li><a href="">User Profile</a></li>
+          <li><a href="">Log Out</a></li>
        </ul>
      </div>
   </section>

@@ -82,7 +82,7 @@ rel="stylesheet">
           <a href="#">Forgot Password</a>
         </div>
        <div class="create">
-        <a href=""> <button type="submit" class="btn2">Create new account</button></a>
+        <a href="signup.php"> <button type="submit" class="btn2">Create new account</button></a>
        </div>
       </div>
       </div>
