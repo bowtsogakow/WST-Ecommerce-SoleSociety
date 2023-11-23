@@ -68,15 +68,6 @@ accountDropDown.addEventListener('click', () =>{
 
 
 
-function toggleDropdownBurger() {
-  var dropdown = document.getElementById("dropdownContent-burger");
-  if (dropdown.style.display === "none") {
-    dropdown.style.display = "block";
-  } else {
-    dropdown.style.display = "none";
-  }
-}
-
 const accountDropDownBurger = document.getElementById('accountDropDown-burger');
 
 accountDropDownBurger.addEventListener('click', () =>{

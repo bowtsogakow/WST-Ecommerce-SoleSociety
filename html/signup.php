@@ -51,32 +51,39 @@ rel="stylesheet">
     
   </header>
 
-      <div class="wrapper" data-aos="flip-left"  data-aos-duration="1000">
-          <div class="form-box login">
-            <h2>Sign Up</h2>
-                <form action = "signup.php" method="post" id = "SignUpForm">
-                  
-                  <!-- Username -->
-                    <div class="input-box label-username">
-                      <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                      <input type="text" name="Username" required>
-                      <label>Username</label>
-                    </div>
-                  <!--Email-->
-                  <div class="input-box label-email">
-                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="text" name="Email" required>
-                    <label>Email</label>
-                  </div>
-                  <!--Password-->
-                  <div class="input-box">
-                    <span class="icon icon-hide" id="hidePassword"><ion-icon name="eye-outline"></ion-icon></span>
-                    <span class="icon icon-show" id="showPassword"><ion-icon name="eye-off-outline"></ion-icon></span>
-                    <input type="password" name = "password" id="inputPassword" required>
-                    <label>Password</label>
-                  </div>
-                  <!-- Captcha -->
-                  <div class="form-group">
+  <div class="wrapper" data-aos="flip-left"  data-aos-duration="1000">
+    <div class="form-box login">
+      <h2>Sign Up</h2>
+          <form action = "signup.php" method="post" id = "SignUpForm">
+            
+        <!-- Username -->
+              <div class="input-box label-username">
+                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <input type="text" name="Username" required>
+                <label>Username</label>
+              </div>
+            <!--Email-->
+            <div class="input-box label-email">
+              <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+              <input type="text" name="Email" required>
+              <label>Email</label>
+            </div>
+            <!--Password-->
+            <div class="input-box">
+              <span class="icon icon-hide" id="hidePassword"><ion-icon name="eye-outline"></ion-icon></span>
+              <span class="icon icon-show" id="showPassword"><ion-icon name="eye-off-outline"></ion-icon></span>
+              <input type="password" name = "password" id="inputPassword" required>
+              <label>Password</label>
+            </div>
+            <!--Confirm Password-->
+            <div class="input-box label-confirm-password">
+              <span class="icon icon-hide" id="hideConfirmPassword"><ion-icon name="eye-outline"></ion-icon></span>
+              <span class="icon icon-show" id="showConfirmPassword"><ion-icon name="eye-off-outline"></ion-icon></span>
+              <input type="password" name = "confirmPassword" id="confirmPassword" required>
+              <label>Confirm Password</label>
+           </div>
+            <!-- Captcha -->
+            <div class="form-group">
                     <div class="captcha">
                       <label for="captcha">Captcha:</label>
                       <span id="captchaText"></span>
@@ -84,9 +91,10 @@ rel="stylesheet">
                     </div>
                     <input type="text" id="captchaInput" required placeholder="Enter Captcha">
                   </div>
-                  <button type="submit" class="btn1">SIGN UP</button>
-
               
+            <button type="submit" class="btn1">SIGN UP</button>
+
+         
 
             </form>
           </div>
@@ -143,10 +151,14 @@ function toggleDropdown() {
 }
 
 
-
   const showPass = document.getElementById("showPassword");
   const hidePass = document.getElementById("hidePassword");
   const inputPassword = document.getElementById("inputPassword");
+
+  const showConfirmPass = document.getElementById("showConfirmPassword");
+  const hideConfirmPass = document.getElementById("hideConfirmPassword");
+  const confirmPass = document.getElementById("confirmPassword");
+
     
   showPass.addEventListener("click", () => {
     inputPassword.setAttribute("type", "text");
@@ -159,6 +171,70 @@ function toggleDropdown() {
     showPass.style.visibility = "visible";
     hidePass.style.visibility = "hidden";
   });
+
+  showConfirmPass.addEventListener("click", () => {
+  confirmPass.setAttribute("type", "text");
+  showConfirmPass.style.visibility = "hidden";
+  hideConfirmPass.style.visibility = "visible";
+  });
+
+  hideConfirmPass.addEventListener("click", () => {
+  confirmPass.setAttribute("type", "password");
+  showConfirmPass.style.visibility = "visible";
+  hideConfirmPass.style.visibility = "hidden";
+  });
+
+  showConfirmPass.addEventListener("click", () => {
+  confirmPass.setAttribute("type", "text");
+  showConfirmPass.style.visibility = "hidden";
+  hideConfirmPass.style.visibility = "visible";
+  });
+
+  hideConfirmPass.addEventListener("click", () => {
+  confirmPass.setAttribute("type", "password");
+  showConfirmPass.style.visibility = "visible";
+  hideConfirmPass.style.visibility = "hidden";
+  });
+
+
+  function generateCaptchaText() {
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let captchaText = "";
+    for (let i = 0; i < 6; i++) {
+      captchaText += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return captchaText;
+  }
+  
+function refreshCaptcha() {
+    const captchaText = generateCaptchaText();
+    document.getElementById("captchaText").textContent = captchaText;
+    document.getElementById("captchaInput").value = "";
+  }
+  
+function validateForm() {
+    const captchaText = document.getElementById("captchaText").textContent;
+    const captchaInput = document.getElementById("captchaInput").value;
+  
+    if (captchaInput === captchaText) {
+
+      // dito palagay ata lalagay link pag tama lahat ng sagot
+      
+      return true;
+    } 
+    else {
+      alert("Invalid captcha. Please try again.");
+      refreshCaptcha();
+      return false;
+    }
+  }
+  
+document.getElementById("refreshCaptcha").addEventListener("click", refreshCaptcha);
+  
+refreshCaptcha();
+
+  
 
 
   function generateCaptchaText() {

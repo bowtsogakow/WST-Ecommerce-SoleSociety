@@ -60,18 +60,18 @@ rel="stylesheet">
     if(isset($_SESSION['ID'])){
       
       if($_SESSION['ID']< 0) {
-        echo CartHeader();
+        LoginHeader();
       }
 
       else if ($_SESSION['ID'] > 0) {
-        echo CartHeader();
+        CartHeader();
      
     
       }
     }
 
     else if (!isset($_SESSION['ID'])){
-      echo CartHeader();
+        LoginHeader();
 
       
     }

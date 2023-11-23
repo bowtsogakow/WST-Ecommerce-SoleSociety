@@ -107,7 +107,7 @@ header .first_header .row{
     right: 2.1rem;
     top: 60px;
     height: 0;
-   
+    width: 300px;
     background: rgba(12, 12, 12, 0.1);
     backdrop-filter: blur(15px);
     border-radius: 5px;

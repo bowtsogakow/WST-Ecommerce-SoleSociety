@@ -43,9 +43,7 @@ function checkExistingUser($user, $email){
 }
 
 function LogIn($Email, $InputPassword, $ConfirmPassword) {
-    if ($InputPassword != $ConfirmPassword) {
-        return -2; // Passwords do not match
-    } else {
+   
         OpenDB(); 
         global $conn;  
         $sql_query = "Select id FROM useraccount WHERE Email = ? AND Password = ?"; 
@@ -55,7 +53,7 @@ function LogIn($Email, $InputPassword, $ConfirmPassword) {
         $stmt->bind_result($user_id); 
         $stmt->fetch();
         return $user_id; 
-    }
+   
 }
 
 # Write user sign up info to the Database 
@@ -87,13 +85,11 @@ function getList_Cart($ID){
     global $conn; 
 
     $cart_Id = []; 
-    $product_ID = []; 
-    $user_ID = []; 
     $i; 
 
     $sql_query = "SELECT id FROM cart WHERE userID = ?"; 
     $stmt = $conn->prepare($sql_query); 
-    $stmt->bind_param('s', $ID); 
+    $stmt->bind_param('i', $ID); 
     $stmt->execute(); 
     $result = $stmt->get_result(); 
 
@@ -136,7 +132,7 @@ function getProductInfo($ID){
     global $conn; 
     $Info = []; 
     
-    $sql_query = "SELECT Name, Price FROM shoe_inventory WHERE id = ?"; 
+    $sql_query = "SELECT Name, Price, filename FROM shoe_inventory WHERE id = ?"; 
     $stmt = $conn->prepare($sql_query); 
     $stmt->bind_param('s', $ID); 
     $stmt->execute(); 
@@ -146,6 +142,7 @@ function getProductInfo($ID){
         while($row = $result->fetch_assoc()){
             $Info[0] = $row["Name"]; 
             $Info[1] = $row["Price"]; 
+            $Info[2] = $row["filename"];
         }
     } else {
         return 0; 
@@ -201,9 +198,7 @@ function addtoCart($userID, $productID){
         return 0; 
     }
     
-
 }
-
 
 // input cart ID, then removes it 
 function removeFromCart($ID){
@@ -247,6 +242,40 @@ function getLatestOrder($userID){
     return $orderID;
     closeDb();
 }
+
+function addtoFavorite($userID, $productID){
+    OpenDB(); 
+    global $conn; 
+
+    if ($existing == 0) {
+        $sql_query = "INSERT INTO favorite(UserID, ProductID) VALUES (?, ?)"; 
+        $stmt = $conn->prepare($sql_query);
+        $stmt->bind_param('ss', $userID, $productID); 
+        $InsertStatus = $stmt->execute(); 
+        closeDb();
+        return $InsertStatus; 
+    }
+    else if ($existing > 0) {
+        return 0; 
+    }
+    
+}
+
+function addRow($product){
+      
+    echo "<tr class='product1'>
+    <td><img class='item-img' src='../WST Shoes No Background/$product[2]' alt='Apple'></td>
+    <td class='name'>$product[0]</td>
+    <td class='price'>&#8369; $product[1]</td>
+    <td class='quantity-btn'>
+        <button onclick='updateQuantity(this, -1)'>-</button>
+        <input value='1' min='1' class='quantity'>
+        <button onclick='updateQuantity(this, 1)'>+</button>
+    </td>
+    <td class='total'>---</td>
+    <td><input type='checkbox' class='add-to-cart'></td>";
+
+  }
 
 
 

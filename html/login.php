@@ -75,12 +75,7 @@ rel="stylesheet">
         <label>Password</label>
       </div>
        <!--ConfirmPassword-->
-       <div class="input-box label-confirm-password">
-        <span class="icon icon-hide" id="hideConfirmPassword"><ion-icon name="eye-outline"></ion-icon></span>
-        <span class="icon icon-show" id="showConfirmPassword"><ion-icon name="eye-off-outline"></ion-icon></span>
-        <input type="password" name = "confirmPassword" id="confirmPassword" required>
-        <label>Confirm Password</label>
-      </div>
+      
       <button type="submit" class="btn1">Login</button>
        </form>
         <div class="forgot-password-wrapper">

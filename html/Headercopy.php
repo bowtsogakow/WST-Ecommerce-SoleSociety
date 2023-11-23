@@ -54,7 +54,6 @@ function AddCss(){
     align-items: center;
     }
     header .first_header {
-      position:fixed;
       padding: 10px 40px;
       background-image: linear-gradient(to right,#252422 , #EB5E28);
       width: 100%;
