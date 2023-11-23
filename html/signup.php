@@ -92,8 +92,12 @@ rel="stylesheet">
                     <input type="text" id="captchaInput" required placeholder="Enter Captcha">
                   </div>
               
-            <button type="submit" class="btn1">SIGN UP</button>
-
+            <button type="submit" class="btn1" style="margin-bottom: 1rem;">SIGN UP</button>
+            <a href="login.php" style="
+            color: #e1774d;
+            margin: 4rem 3.4rem;
+            text-decoration: none;
+            ">Already have an Account?</a>
          
 
             </form>

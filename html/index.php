@@ -39,9 +39,8 @@ rel="stylesheet">
    header .first_header .row{
  gap:1rem;}
    header .first_header .flex .search img {
-    top: 10px;
-    left: 31px
-;
+    top: 18px;
+    left: 120px;
 }
    @media(max-width:600px){
     header .first_header .link ul {
