@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php 
+  session_start(); 
+  include "HeaderCopy.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,140 +28,28 @@ rel="stylesheet">
 </head>
 
 <body>
-
   <header>
     <?php 
     if(isset($_SESSION['ID'])){
       
       if($_SESSION['ID']< 0) {
-        echo '
-      <section class="first_header">
-        <div class="container">
-          <div class="row">
-            <div class="flex">
-             <a href="../html/index.html">
-              <a href="./index.html">
-                <div class="logo">
-                <img src="../image/icons/logo2.png" alt="">
-                 </div></a></a>
-               <div class="search">
-            
-                  <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
-                  placeholder="Search products here" autocomplete="off" spellcheck="false">
-                </form>
-               </div>
-            </div>
-            <div class="link">
-              <ul>
-                <li><a href="signup.php">Sign up</a></li>
-                <li><a href="login.php">Log in</a></li>
-               </ul>
-               <div class="menu-icon" id="menuIcon">
-                <i class="bx bx-menu bx-md"></i>
-               </div>
-            </div>
-            </div>
-           </div>
-           <div class="dropdown_menu" id="dropDownMenu">
-            <ul>
-              <li><a href="signup.php">Sign up</a></li>
-              <li><a href="login.php">Log in</a></li>
-             </ul>
-           </div>
-      </section>
-      ';
-
+        echo '';
 
       }
 
       else if ($_SESSION['ID'] > 0) {
-        echo '
-        <section class="Hidden_header">
-          <div class="container">
-            <div class="row">
-              <div class="flex">
-               <div class="logo">
-                <img src="../image/icons/logo1.png" alt="">
-               </div>
-                 <div class="search">
-      
-                <form>
-                    <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
-                    placeholder="Search products here" autocomplete="off" spellcheck="false">
-                  </form>
-       
-              </div>
-              </div>
-              <div class="link">
-                <ul>
-                  <li><a href="product_list.php">Shop</a></li>
-                  <li><a href="">Cart</a></li>
-                  <li><a href="">Foverite</a></li>
-                  <li><a href="">Account</a></li>
-                 </ul>
-                 <div class="menu-icon" id="menuIcon">
-                  <i class="bx bx-menu bx-md"></i>
-                 </div>
-              </div>
-              </div>
-             </div>
-             <div class="dropdown_menu" id="dropDownMenu">
-              <ul>
-                  <li><a href="product_list.php">Shop</a></li>
-                  <li><a href="">Cart</a></li>
-                  <li><a href="">Foverite</a></li>
-                  <li><a href="">Account</a></li>
-               </ul>
-             </div>
-        </section>';
+        echo '';
      
-    
       }
     }
 
     else if (!isset($_SESSION['ID'])){
-      echo '
-      <section class="first_header">
-        <div class="container">
-          <div class="row">
-            <div class="flex">
-             <a href="../html/index.html">
-              <a href="./index.html">
-                <div class="logo">
-                <img src="../image/icons/logo2.png" alt="">
-                 </div></a></a>
-               <div class="search">
-            
-                  <img src="../image/icons/search-icon.png" alt=""><input type="text" name="search" 
-                  placeholder="Search products here" autocomplete="off" spellcheck="false">
-                </form>
-               </div>
-            </div>
-            <div class="link">
-              <ul>
-                <li><a href="signup.php">Sign up</a></li>
-                <li><a href="login.php">Log in</a></li>
-               </ul>
-               <div class="menu-icon" id="menuIcon">
-                <i class="bx bx-menu bx-md"></i>
-               </div>
-            </div>
-            </div>
-           </div>
-           <div class="dropdown_menu" id="dropDownMenu">
-            <ul>
-              <li><a href="signup.php">Sign up</a></li>
-              <li><a href="login.php">Log in</a></li>
-             </ul>
-           </div>
-      </section>
-      ';
+      echo '';
     }
 
     ?>
     
   </header>
-
 
   <div class="wrapper" data-aos="flip-left"  data-aos-duration="1000">
     <div class="form-box login">
@@ -184,89 +75,42 @@ rel="stylesheet">
               <input type="password" name = "password" id="inputPassword" required>
               <label>Password</label>
             </div>
-            <button type="submit" class="btn1">SIGN UP</button>
-
+            <!--Confirm Password-->
+            <div class="input-box label-confirm-password">
+              <span class="icon icon-hide" id="hideConfirmPassword"><ion-icon name="eye-outline"></ion-icon></span>
+              <span class="icon icon-show" id="showConfirmPassword"><ion-icon name="eye-off-outline"></ion-icon></span>
+              <input type="password" name = "confirmPassword" id="confirmPassword" required>
+              <label>Confirm Password</label>
+           </div>
+            <!-- Captcha -->
+            <div class="form-group">
+                    <div class="captcha">
+                      <label for="captcha">Captcha:</label>
+                      <span id="captchaText"></span>
+                      <button type="button" id="refreshCaptcha">Refresh</button>
+                    </div>
+                    <input type="text" id="captchaInput" required placeholder="Enter Captcha">
+                  </div>
+              
+            <button type="submit" class="btn1" style="margin-bottom: 1rem;">SIGN UP</button>
+            <a href="login.php" style="
+            color: #e1774d;
+            margin: 4rem 3.4rem;
+            text-decoration: none;
+            ">Already have an Account?</a>
          
 
-      </form>
-    </div>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  </div>
+            </form>
+          </div>
+          <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+          <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        </div>
+  
 </form>
 </main>
 <footer>
-  <div class="container">
-    <div class="row">
-       <div class="logo">
-     <a href=""> <img src="../image/icons/logo1.png" alt=""></a>
-       </div>
-       <div class="links">
-        <div class="link">
-          <div class="about_us">
-            <div class="">
-              <h2 class="footer-heading">About Us</h2>
-           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, reprehenderit!</p>
-            </div>
-           <div class="link">
-            <div class="contact_us">
-            <h2 class="footer-heading">Contact Us</h2>
-            <div class="phone">
-              <img src="../image/icons/icon-phone.svg" alt="">
-             <a href="">Phone: +1-543-123-4567</a>
-           </div>
-           <div class="email">
-             <img src="../image/icons/icon-email.svg" alt="">
-           <a href=""> example@fylo.com</a>
-          </div>
-         </div>
-        </div>
-      </div>
-        </div>
-
-        <div class="link">
-          <div class="information">
-            <h2 class="footer-heading">information</h2>
-            <li><a href="">About Us</a></li>
-            <li><a href="">More Search</a></li>
-            <li><a href="">Blog</a></li>
-            <li><a href="">Testimonals</a></li>
-            <li><a href="">Events</a></li>
-          </div>
-        </div>
-
-        <div class="link">
-          <div class="helpful-links">
-            <h2 class="footer-heading">helpful Links</h2>
-            <li><a href="">Services</a></li>
-            <li><a href="">Supports</a></li>
-            <li><a href="">Terms</a></li>
-            <li><a href="">privacy Policy</a></li>
-           </div>
-        </div>
-
-        <div class="link input">
-          <p class="info">Subscribe More Info</p>
-          <form >
-            <input type="text" placeholder="Enter your Email" required>
-         <div class="button">
-          <button>Subscribe</button>
-         </div>
-          </form>
-        </div>
-       </div>
-
-       <div class="line"></div>
-
-       <div class="link_icons">
-        <a href=""><i class='bx bxl-facebook'></i></a>
-        <a href=""><i class='bx bxl-twitter' ></i></a>
-        <a href=""><i class='bx bxl-instagram'></i></a>
-        <a href=""><i class='bx bxl-google-plus'></i></a>
-        
-      </div>
-    </div>
-  </div>
+  
+  <?php echo AddFooter();?>
 </footer>
 <script>
   AOS.init();
@@ -301,9 +145,24 @@ rel="stylesheet">
   ?> 
 
 <script>
+function toggleDropdown() {
+  var dropdown = document.getElementById("dropdownContent");
+  if (dropdown.style.display === "none") {
+    dropdown.style.display = "block";
+  } else {
+    dropdown.style.display = "none";
+  }
+}
+
+
   const showPass = document.getElementById("showPassword");
   const hidePass = document.getElementById("hidePassword");
   const inputPassword = document.getElementById("inputPassword");
+
+  const showConfirmPass = document.getElementById("showConfirmPassword");
+  const hideConfirmPass = document.getElementById("hideConfirmPassword");
+  const confirmPass = document.getElementById("confirmPassword");
+
     
   showPass.addEventListener("click", () => {
     inputPassword.setAttribute("type", "text");
@@ -316,6 +175,110 @@ rel="stylesheet">
     showPass.style.visibility = "visible";
     hidePass.style.visibility = "hidden";
   });
+
+  showConfirmPass.addEventListener("click", () => {
+  confirmPass.setAttribute("type", "text");
+  showConfirmPass.style.visibility = "hidden";
+  hideConfirmPass.style.visibility = "visible";
+  });
+
+  hideConfirmPass.addEventListener("click", () => {
+  confirmPass.setAttribute("type", "password");
+  showConfirmPass.style.visibility = "visible";
+  hideConfirmPass.style.visibility = "hidden";
+  });
+
+  showConfirmPass.addEventListener("click", () => {
+  confirmPass.setAttribute("type", "text");
+  showConfirmPass.style.visibility = "hidden";
+  hideConfirmPass.style.visibility = "visible";
+  });
+
+  hideConfirmPass.addEventListener("click", () => {
+  confirmPass.setAttribute("type", "password");
+  showConfirmPass.style.visibility = "visible";
+  hideConfirmPass.style.visibility = "hidden";
+  });
+
+
+  function generateCaptchaText() {
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let captchaText = "";
+    for (let i = 0; i < 6; i++) {
+      captchaText += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return captchaText;
+  }
+  
+function refreshCaptcha() {
+    const captchaText = generateCaptchaText();
+    document.getElementById("captchaText").textContent = captchaText;
+    document.getElementById("captchaInput").value = "";
+  }
+  
+function validateForm() {
+    const captchaText = document.getElementById("captchaText").textContent;
+    const captchaInput = document.getElementById("captchaInput").value;
+  
+    if (captchaInput === captchaText) {
+
+      // dito palagay ata lalagay link pag tama lahat ng sagot
+      
+      return true;
+    } 
+    else {
+      alert("Invalid captcha. Please try again.");
+      refreshCaptcha();
+      return false;
+    }
+  }
+  
+document.getElementById("refreshCaptcha").addEventListener("click", refreshCaptcha);
+  
+refreshCaptcha();
+
+  
+
+
+  function generateCaptchaText() {
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let captchaText = "";
+    for (let i = 0; i < 6; i++) {
+      captchaText += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return captchaText;
+  }
+  
+function refreshCaptcha() {
+    const captchaText = generateCaptchaText();
+    document.getElementById("captchaText").textContent = captchaText;
+    document.getElementById("captchaInput").value = "";
+  }
+  
+function validateForm() {
+    const captchaText = document.getElementById("captchaText").textContent;
+    const captchaInput = document.getElementById("captchaInput").value;
+  
+    if (captchaInput === captchaText) {
+
+      // dito palagay ata lalagay link pag tama lahat ng sagot
+      
+      return true;
+    } 
+    else {
+      alert("Invalid captcha. Please try again.");
+      refreshCaptcha();
+      return false;
+    }
+  }
+  
+document.getElementById("refreshCaptcha").addEventListener("click", refreshCaptcha);
+  
+refreshCaptcha();
+
+  
 
   </script>
   

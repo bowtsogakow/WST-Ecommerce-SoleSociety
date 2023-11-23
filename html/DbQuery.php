@@ -43,9 +43,7 @@ function checkExistingUser($user, $email){
 }
 
 function LogIn($Email, $InputPassword, $ConfirmPassword) {
-    if ($InputPassword != $ConfirmPassword) {
-        return -2; // Passwords do not match
-    } else {
+   
         OpenDB(); 
         global $conn;  
         $sql_query = "Select id FROM useraccount WHERE Email = ? AND Password = ?"; 
@@ -55,7 +53,7 @@ function LogIn($Email, $InputPassword, $ConfirmPassword) {
         $stmt->bind_result($user_id); 
         $stmt->fetch();
         return $user_id; 
-    }
+   
 }
 
 # Write user sign up info to the Database 
