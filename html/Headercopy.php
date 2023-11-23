@@ -654,7 +654,7 @@ function CartHeader(){
       <div class="link">
         <ul>
           <li><a href="">Shop</a></li>
-          <li><a href="">Cart</a></li>
+          <li><a href="Shopping_Cart.php">Cart</a></li>
           <li><a href="">Foverite</a></li>
           <li><a href="">Account</a></li>
          </ul>

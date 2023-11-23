@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -285,149 +287,91 @@ background-color: #EB5E28;
   ?> 
 </header>
 <main>
-<section class="card">
-<div class="container">
-        <div class="row">
-          <div class="heading">
+  <?php
+    include "DBQuery.php"; 
+    $CartValue = getList_Cart($_SESSION["ID"]); 
+    $count = count($CartValue); 
+    $productID = []; 
+    for ($i = 0; $i < $count; $i++){
+      $productID[$i] = getProduct($CartValue[$i]); 
+      echo $productID[$i] . "<br>"; 
+    }
+
+     
+
+    
+    if($count < 0 ){
+
+      echo "No item found";  
+    }
+
+    else {
+      echo "<section class='car'>
+    <div class='container'>
+        <div class='row'>
+          <div class='heading'>
             <h1>cart</h1>
           </div>
-            <div class="content">
+            <div class='content'>
             <table>
                 <thead>
                     <tr>
-                      <th class="Product">Product</th>
+                      <th class='Product'>Product</th>
                         <th></th>
                         <th>Price</th>
                         <th>Quantity</th>
-                        <th class="total">Total</th>
-                        <th><input type="checkbox" id="selectAll" onclick="toggleSelectAll(this)"></th>
+                        <th class='total'>Total</th>
+                        <th><input type='checkbox' id='selectAll' onclick='toggleSelectAll(this)'></th>
                     </tr>
                 </thead>
+
+                <tbody>";   
+
+                $numberID = count($productID);
+                for($a = 0; $a < $numberID; $a++){
+
+                  $product = getProductInfo($productID[$a]); 
+                  addRow($product); 
+                }
              
-                  <tr class="product1">
-                        <td><img class="item-img" src="../image/adidas/CENTENNIAL_85_LOW_SHOES.png" alt="Apple"></td>
-                        <td class="name">name</td>
-                        <td class="price">&#8369;99</td>
-                        <td class="quantity-btn">
-                            <button onclick="updateQuantity(this, -1)">-</button>
-                            <input value="1" min="1" class="quantity">
-                            <button onclick="updateQuantity(this, 1)">+</button>
-                        </td>
-                        <td class="total">---</td>
-                        <td><input type="checkbox" class="add-to-cart"></td>
-                       
-                    </tr>
-                    
-                    <tr class="product1">
-                      <td><img class="item-img" src="../image/adidas/CENTENNIAL_85_LOW_SHOES.png" alt="Apple"></td>
-                      <td class="name">name</td>
-                      <td>&#8369;99</td>
-                      <td class="quantity-btn">
-                          <button onclick="updateQuantity(this, -1)">-</button>
-                          <input value="1" min="1" class="quantity">
-                          <button onclick="updateQuantity(this, 1)">+</button>
-                      </td>
-                      <td class="total">---</td>
-                      <td><input type="checkbox" class="add-to-cart"></td>
-                  </tr>
-                  <tr class="product1">
-                    <td><img class="item-img" src="../image/adidas/CENTENNIAL_85_LOW_SHOES.png" alt="Apple"></td>
-                    <td class="name">name</td>
-                    <td>&#8369;99</td>
-                    <td class="quantity-btn">
-                        <button onclick="updateQuantity(this, -1)">-</button>
-                        <input value="1" min="1" class="quantity">
-                        <button onclick="updateQuantity(this, 1)">+</button>
-                    </td>
-                    <td class="total">---</td>
-                    <td><input type="checkbox" class="add-to-cart"></td>
-                </tr>
-                    <tr class="product1">
-                        <td><img class="item-img" src="../image/adidas/CENTENNIAL_85_LOW_SHOES.png" alt="Apple"></td>
-                        <td class="name">name</td>
-                        <td>&#8369;99</td>
-                        <td class="quantity-btn">
-                            <button onclick="updateQuantity(this, -1)">-</button>
-                            <input value="1" min="1" class="quantity">
-                            <button onclick="updateQuantity(this, 1)">+</button>
-                        </td>
-                        <td class="total">---</td>
-                        <td><input type="checkbox" class="add-to-cart"></td>
-                    </tr>
-                    <tr class="product1">
-                      <td><img class="item-img" src="../image/adidas/CENTENNIAL_85_LOW_SHOES.png" alt="Banana"></td>
-                      <td>name</td>
-                      <td>&#8369;99</td>
-                      <td class="quantity-btn">
-                          <button onclick="updateQuantity(this, -1)">-</button>
-                          <input  value="1" min="1" class="quantity">
-                          <button onclick="updateQuantity(this, 1)">+</button>
-                      </td>
-                      <td class="total">---</td>
-                      <td><input type="checkbox" class="add-to-cart"></td>
-                  </tr>
-                  <tr class="product1">
-                    <td><img class="item-img" src="../image/adidas/CENTENNIAL_85_LOW_SHOES.png" alt="Banana"></td>
-                    <td>Bananas</td>
-                    <td>&#8369;99</td>
-                    <td class="quantity-btn">
-                        <button onclick="updateQuantity(this, -1)">-</button>
-                        <input  value="1" min="1" class="quantity">
-                        <button onclick="updateQuantity(this, 1)">+</button>
-                    </td>
-                    <td class="total">---</td>
-                    <td><input type="checkbox" class="add-to-cart"></td>
-                </tr>
-                <trclass="product1">
-                  <td><img class="item-img" src="../image/adidas/CENTENNIAL_85_LOW_SHOES.png" alt="Banana" alt="Banana"></td>
-                  <td>Bananas</td>
-                  <td>&#8369;99</td>
-                  <td class="quantity-btn">
-                      <button onclick="updateQuantity(this, -1)">-</button>
-                      <input  value="1" min="1" class="quantity">
-                      <button onclick="updateQuantity(this, 1)">+</button>
-                  </td>
-                  <td class="total">---</td>
-                  <td><input type="checkbox" class="add-to-cart"></td>
-               </tr>
-                </tbody>
+        echo "</tbody>
             </table>
               <!-- checkout -->
-            <div class="checkout-buttons">
-               <div class="div1">
-               <div class="flex">
-                <div class="voucher">
+            <div class='checkout-buttons'>
+               <div class='div1'>
+               <div class='flex'>
+                <div class='voucher'>
                   <p>voucher:</p>
                 </div>
-                <div class="select">
+                <div class='select'>
                   <p > Select or Enter code</p>
                 </div>
                </div>
             </div>
-            <div class="line"></div>
+            <div class='line'></div>
             
-             <div class="div2">
-              <div class="checkbox">
-                <input type="checkbox">
+             <div class='div2'>
+              <div class='checkbox'>
+                <input type='checkbox'>
               </div>
-              <div class="select">
+              <div class='select'>
                 <p>Seclect All(3)</p>
               </div>
-             <div class="delete">
-              <button onclick="deleteSelected()">Delete Selected</button>
+             <div class='delete'>
+              <button onclick='deleteSelected()'>Delete Selected</button>
              </div>
              </div>
-             <div class="line"></div>
+             <div class='line'></div>
             
-              <div class="div3">
-                <div class="totals">
+              <div class='div3'>
+                <div class='totals'>
                   <p>total (0 item): </p>
                 </div>
-                  <div class="total">
+                  <div class='total'>
                     <h1>	&#8369;200</h1>
                   </div>
-                <div class="button">
-                  <button id="checkout" onclick="showPlaceOrder()">Checkout</button>
+                <div class='button'>
+                  <button id='checkout' onclick='showPlaceOrder()'>Checkout</button>
 
               </div>
               
@@ -439,57 +383,57 @@ background-color: #EB5E28;
         </div>
     </div>
 </section>
-<section class="PlaceOrder" id="placeOrder">
-<div class="row">
-  <div class="container" >
-  <div class="close">
-<span id="closeButton" onclick="closePlaceOrder()">X</span>
+<section class='PlaceOrder' id='placeOrder'>
+<div class='row'>
+  <div class='container' >
+  <div class='close'>
+<span id='closeButton' onclick='closePlaceOrder()'>X</span>
 </div>
-       <div class="buttons">
-       <div class="paymentmethod">
-        <div class="Pm">
+       <div class='buttons'>
+       <div class='paymentmethod'>
+        <div class='Pm'>
           <p>Payment Method:</p>
         </div>
-        <div class="Cash">
+        <div class='Cash'>
           <p>Cash On Delivery</p>
         </div>
-        <div class="lick">
+        <div class='lick'>
         <p>CHANGE</p>
         </div>
        </div>
 
-      <div class="line"></div>
+      <div class='line'></div>
 
-       <div class="flex">
-        <div class="total">
+       <div class='flex'>
+        <div class='total'>
         <p>Subtotal:</p>
         </div>
-        <div class="price">
+        <div class='price'>
           <p>&#8369;224</p>
         </div>
        </div>
 
-       <div class="line"></div>
+       <div class='line'></div>
 
-       <div class="flex">
-        <div class="shippingtotal">
+       <div class='flex'>
+        <div class='shippingtotal'>
         <p>Shipping Subtotal:</p>
         </div>
-        <div class="price">
+        <div class='price'>
           <p>&#8369;224</p>
         </div>
        </div>
 
-       <div class="line"></div>
+       <div class='line'></div>
 
-       <div class="flex">
-        <div class="total">
+       <div class='flex'>
+        <div class='total'>
         <p>Shipping Subtotal:</p>
         </div>
-        <div class="boldprice">
+        <div class='boldprice'>
           <h1>&#8369;224</h1>
         </div>
-        <div class="button">
+        <div class='button'>
           <button>Place Order</button>
         </div>
        </div>
@@ -500,34 +444,34 @@ background-color: #EB5E28;
 </section>
 
     <script>
-        const quantityInputs = document.querySelectorAll(".quantity");
+        const quantityInputs = document.querySelectorAll('.quantity');
         quantityInputs.forEach(input => {
-            input.addEventListener("change", calculateTotal);
+            input.addEventListener('change', calculateTotal);
         });
 
-        const addToCartCheckboxes = document.querySelectorAll(".add-to-cart");
+        const addToCartCheckboxes = document.querySelectorAll('.add-to-cart');
         addToCartCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener("change", calculateSelectAll);
+            checkbox.addEventListener('change', calculateSelectAll);
         });
 
-        const selectAllCheckbox = document.getElementById("selectAll");
-        selectAllCheckbox.addEventListener("change", toggleAllCheckboxes);
+        const selectAllCheckbox = document.getElementById('selectAll');
+        selectAllCheckbox.addEventListener('change', toggleAllCheckboxes);
 
         function calculateTotal() {
             const row = this.parentNode.parentNode;
             const quantity = parseFloat(this.value);
-            const price = parseFloat(row.cells[2].textContent.replace("₱", ""));
+            const price = parseFloat(row.cells[2].textContent.replace('₱', ''));
             const totalCell = row.cells[4];
-            totalCell.textContent = "₱" + (quantity * price).toFixed(2);
+            totalCell.textContent = '₱' + (quantity * price).toFixed(2);
         }
 
         function calculateSelectAll() {
-            const checkboxes = document.querySelectorAll(".add-to-cart");
+            const checkboxes = document.querySelectorAll('.add-to-cart');
             selectAllCheckbox.checked = Array.from(checkboxes).every(checkbox => checkbox.checked);
         }
 
         function updateQuantity(button, increment) {
-            const quantityInput = button.parentNode.querySelector(".quantity");
+            const quantityInput = button.parentNode.querySelector('.quantity');
             let quantity = parseInt(quantityInput.value);
             quantity += increment;
             quantity = Math.max(quantity, 1);
@@ -536,50 +480,57 @@ background-color: #EB5E28;
         }
 
         function toggleAllCheckboxes() {
-            const checkboxes = document.querySelectorAll(".add-to-cart");
+            const checkboxes = document.querySelectorAll('.add-to-cart');
             checkboxes.forEach(checkbox => {
                 checkbox.checked = this.checked;
                 const totalCell = checkbox.parentNode.parentNode.cells[4];
 
                 if (this.checked) {
-                    totalCell.style.fontWeight = "bold";
+                    totalCell.style.fontWeight = 'bold';
                 } else {
-                    totalCell.style.fontWeight = "normal";
+                    totalCell.style.fontWeight = 'normal';
                 }
             });
         }
         function deleteSelected() {
-            const selectedItems = document.querySelectorAll(".add-to-cart:checked");
+            const selectedItems = document.querySelectorAll('.add-to-cart:checked');
             selectedItems.forEach(item => {
                 const row = item.parentNode.parentNode;
                 row.remove();
             });
         }
         function checkout() {
-        const selectedItems = document.querySelectorAll(".add-to-cart:checked");
+        const selectedItems = document.querySelectorAll('.add-to-cart:checked');
         const totalAmount = Array.from(selectedItems).reduce((total, item) => {
             const row = item.parentNode.parentNode;
-            const price = parseFloat(row.cells[2].textContent.replace("₱", ""));
-            const quantity = parseFloat(row.cells[3].querySelector(".quantity").value);
+            const price = parseFloat(row.cells[2].textContent.replace('₱', ''));
+            const quantity = parseFloat(row.cells[3].querySelector('.quantity').value);
             total += price * quantity;
             return total;
         }, 0);
 
         // You can customize this part based on your checkout logic
-        alert("Total amount: ₱" + totalAmount.toFixed(2));
+        alert('Total amount: ₱' + totalAmount.toFixed(2));
     }
     
     function showPlaceOrder() {
-      document.getElementById("placeOrder").style.display = "block";
-      document.getElementById("closeButton").style.display = "inline";
+      document.getElementById('placeOrder').style.display = 'block';
+      document.getElementById('closeButton').style.display = 'inline';
     }
 
     function closePlaceOrder() {
-      document.getElementById("placeOrder").style.display = "none";
-      document.getElementById("closeButton").style.display = "none";
+      document.getElementById('placeOrder').style.display = 'none';
+      document.getElementById('closeButton').style.display = 'none';
     }
     
-    </script>
+    </script>";
+
+
+    }
+
+    
+  ?>
+
 </main>
 <footer>
   <?php
