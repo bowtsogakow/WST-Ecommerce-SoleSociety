@@ -43,9 +43,7 @@ function checkExistingUser($user, $email){
 }
 
 function LogIn($Email, $InputPassword, $ConfirmPassword) {
-    if ($InputPassword != $ConfirmPassword) {
-        return -2; // Passwords do not match
-    } else {
+   
         OpenDB(); 
         global $conn;  
         $sql_query = "Select id FROM useraccount WHERE Email = ? AND Password = ?"; 
@@ -55,7 +53,7 @@ function LogIn($Email, $InputPassword, $ConfirmPassword) {
         $stmt->bind_result($user_id); 
         $stmt->fetch();
         return $user_id; 
-    }
+   
 }
 
 # Write user sign up info to the Database 
@@ -113,7 +111,6 @@ function getList_Cart($ID){
 function getProduct($ID){
     OpenDB(); 
     global $conn; 
-    $product_ID;
     
     $sql_query = "SELECT productID FROM cart WHERE id = ?"; 
     $stmt = $conn->prepare($sql_query); 
@@ -161,7 +158,7 @@ function getProductInfo($ID){
 function checkExistingCart($user_ID, $product_ID){
     OpenDB(); 
     global $conn; 
-    $cart_ID;
+    
     $sql_query = "SELECT id FROM cart WHERE userID = ? AND productID = ?"; 
     $stmt = $conn->prepare($sql_query);
     $stmt->bind_param('ss', $user_ID, $product_ID); 
@@ -214,6 +211,8 @@ function removeFromCart($ID){
     return $result; 
 }
 
+//ORDER
+
 // Input user id, and mag aadd ng order 
 function addOrder($userID){
     OpenDB(); 
@@ -244,9 +243,64 @@ function getLatestOrder($userID){
     closeDb();
 }
 
+//FAVORITES
+
+// input user at product id, nirereturn 0 pag walang nakita na favorite, 
+// return fave id pag meron
+function checkExistingFavorite($user_ID, $product_ID){
+    OpenDB(); 
+    global $conn; 
+    
+    $sql_query = "SELECT fave_id FROM favorite WHERE userid = ? AND productid = ?"; 
+    $stmt = $conn->prepare($sql_query);
+    $stmt->bind_param('ss', $user_ID, $product_ID); 
+    $stmt->execute(); 
+    $stmt->bind_result($fave_ID);
+    $stmt->fetch(); 
+
+    if($fave_ID > 0){
+        return $fave_ID; 
+    }
+    else {
+        return 0; 
+    }
+    
+
+    closeDb();
+}
+
+function getList_Favorite($ID){
+    OpenDB(); 
+    global $conn; 
+
+    $favorite_Id = []; 
+
+    $sql_query = "SELECT fave_id FROM favorite WHERE userID = ?"; 
+    $stmt = $conn->prepare($sql_query); 
+    $stmt->bind_param('i', $ID); 
+    $stmt->execute(); 
+    $result = $stmt->get_result(); 
+
+    if($result->num_rows > 0){
+        $i = 0; 
+        while($row = $result->fetch_assoc()){
+            $favorite_Id[$i] = $row["fave_id"]; 
+            $i++; 
+        }
+    
+    } else {
+        return 0; 
+    }
+    
+    closeDB();
+    return $favorite_Id; 
+}
+
 function addtoFavorite($userID, $productID){
     OpenDB(); 
     global $conn; 
+
+    $existing = checkExistingFavorite($userID, $productID);
 
     if ($existing == 0) {
         $sql_query = "INSERT INTO favorite(UserID, ProductID) VALUES (?, ?)"; 
@@ -262,10 +316,29 @@ function addtoFavorite($userID, $productID){
     
 }
 
+
+// Accepts cart ID, return ID
+function getProductFavorite($ID){
+    OpenDB(); 
+    global $conn; 
+    
+    
+    $sql_query = "SELECT productID FROM favorite WHERE productID = ?"; 
+    $stmt = $conn->prepare($sql_query); 
+    $stmt->bind_param('s', $ID); 
+    $stmt->execute(); 
+    $stmt->bind_result($product_ID); 
+    $stmt->fetch();
+    
+    closeDB();
+    return $product_ID; 
+
+}
+
 function addRow($product){
       
     echo "<tr class='product1'>
-    <td><img class='item-img' src='../WST Shoes No Background/$product[2]' alt='Apple'></td>
+    <td><img class='item-img' src='../WSTShoesNoBackground/$product[2]' alt='Apple'></td>
     <td class='name'>$product[0]</td>
     <td class='price'>&#8369; $product[1]</td>
     <td class='quantity-btn'>

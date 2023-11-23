@@ -54,7 +54,6 @@ function AddCss(){
     align-items: center;
     }
     header .first_header {
-      position:fixed;
       padding: 10px 40px;
       background-image: linear-gradient(to right,#252422 , #EB5E28);
       width: 100%;
@@ -75,9 +74,9 @@ function AddCss(){
     }
     header .first_header .flex .search img{
       position: absolute;
-      width: 18px;
-      top: 19px;
-      left: 80px;
+    width: 18px;
+    top: 8px;
+    left: 31px;
     }
     header .first_header .flex .search input{
       padding: 8px;
@@ -88,6 +87,7 @@ function AddCss(){
       width: 100%;
      
     }
+    
     header .first_header .link ul{
       display: flex;
       gap: 30px;
@@ -131,7 +131,7 @@ function AddCss(){
       position: absolute;
       right: 2.1rem;
       top: 60px;
-      height: 0;
+      height: 0px;
       width: 300px;
       background: rgba(12, 12, 12, 0.1);
       backdrop-filter: blur(15px);
@@ -141,7 +141,7 @@ function AddCss(){
       transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     } 
     header .first_header .dropdown_menu.open{
-      height: 140px;
+      height:max-content;
     }
     header .first_header .dropdown_menu li{
       padding:0.7rem;
@@ -179,7 +179,7 @@ function AddCss(){
     header .Hidden_header .flex .search img{
       position: absolute;
       width: 18px;
-      top: 13px;
+      top: 15px;
       left: 80px;
     }
     header .Hidden_header .flex .search input{
@@ -244,13 +244,42 @@ function AddCss(){
       transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     } 
     header .Hidden_header .dropdown_menu.open{
-      height: 140px;
+      height: max-content;
     }
     header .Hidden_header .dropdown_menu li{
       padding:0.7rem;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    #accountDropDown{
+      cursor: pointer;
+    }
+    .dropdown-content {
+      visibility: hidden;
+      position: absolute;
+      top: 2rem;
+      
+      right: 0;
+      z-index: 1;
+      min-width: 160px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+      padding: 1rem 0.5rem;
+      background: transparent;
+      backdrop-filter: blur(50px);
+      box-shadow: 3px 5px 10px rgba(0,0,0,0.5);
+      border-radius: 10px;
+      width: max-content;
+    }
+    .dropdown-content.active {
+      visibility: visible;
     }
   /* FOOTER */
   footer {
@@ -370,8 +399,8 @@ function AddCss(){
   header .first_header .flex .search img {
     position: absolute;
     width: 18px;
-    top: 18px;
-    left: 100px;
+    top: 9px;
+    left: 33px;
   }
   header .first_header .link .menu-icon{
     display: block;
@@ -380,6 +409,11 @@ function AddCss(){
     display: block;
    
   } 
+  header .first_header .link ul {
+    display: none;
+    gap: 30px;
+    list-style: none;
+}
   header .first_header .row{
     display: flex;
     justify-content: space-between;
@@ -466,11 +500,16 @@ function AddCss(){
   /* MOBILE-L */
   @media (max-width: 425px){
   header .first_header .flex .search img {
-      position: absolute;
-      width: 18px;
-      top: 18px;
-      left: 100px;
+    position: absolute;
+    width: 18px;
+    top: 10px;
+    left: 31px;
   }
+  header .first_header .link ul {
+    display: none;
+    gap: 30px;
+    list-style: none;
+}
     .products-slide {
       display: grid;
       grid-template-columns: 1fr;
@@ -526,7 +565,7 @@ function LoginHeader(){
          <a href="../html/index.html">
           <a href="../index.html">
             <div class="logo">
-            <img src="../image/icons/logo2.png" alt="">
+            <img src="../image/icons/logo1.png" alt="">
              </div></a></a>
            <div class="search">
         
@@ -640,7 +679,7 @@ function CartHeader(){
     <div class="row">
       <div class="flex">
        <div class="logo">
-        <img src="../image/icons/logo1.png" alt="">
+        <img src="../image/icons/logo.png" alt="">
        </div>
          <div class="search">
 
@@ -653,10 +692,20 @@ function CartHeader(){
       </div>
       <div class="link">
         <ul>
-          <li><a href="">Shop</a></li>
+          <li><a href="Product_item.php">Shop</a></li>
           <li><a href="Shopping_Cart.php">Cart</a></li>
           <li><a href="">Favorite</a></li>
-          <li><a href="">Account</a></li>
+          <li>
+            <div class="dropdown">
+              <a id="accountDropDown">Account</a>
+              <div id="dropdownContent" class="dropdown-content">
+                <a href="#">Purchase History</a>
+                <a href="#">User Profile</a>
+                <a href="#">Log Out</a>
+              </div>
+            </div>
+          </li>
+          
          </ul>
          <div class="menu-icon" id="menuIcon">
           <i class="bx bx-menu bx-md"></i>
@@ -669,10 +718,12 @@ function CartHeader(){
           <li><a href="">Shop</a></li>
           <li><a href="">Cart</a></li>
           <li><a href="">Favorite</a></li>
-          <li><a href="">Account</a></li>
+          <li><a>Purchase History</a></li>
+          <li><a>User Profile</a></li>
+          <li><a>Log Out</a></li>
        </ul>
      </div>
-
+  </section>
   ' ;
 }
 ?>

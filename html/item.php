@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php
 
 // if (isset($_GET['myVariable'])) {
@@ -25,7 +26,7 @@ function getName(){
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $database = "soul_society_inventory"; 
+    $database = "solesocietyDB"; 
 
     $conn = new mysqli($servername, $username, $password, $database);
 
@@ -66,7 +67,7 @@ function getName(){
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $database = "soul_society_inventory"; 
+        $database = "solesocietyDB"; 
     
         $conn = new mysqli($servername, $username, $password, $database);
     
@@ -108,7 +109,7 @@ function getName(){
             $servername = "localhost";
             $username = "root";
             $password = "";
-            $database = "soul_society_inventory"; 
+            $database = "solesocietyDB"; 
         
             $conn = new mysqli($servername, $username, $password, $database);
         
@@ -150,7 +151,7 @@ function getName(){
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $database = "soul_society_inventory"; 
+                $database = "solesocietyDB"; 
             
                 $conn = new mysqli($servername, $username, $password, $database);
             
@@ -192,7 +193,7 @@ function getName(){
                     $servername = "localhost";
                     $username = "root";
                     $password = "";
-                    $database = "soul_society_inventory"; 
+                    $database = "solesocietyDB"; 
                 
                     $conn = new mysqli($servername, $username, $password, $database);
                 
@@ -269,7 +270,7 @@ function getName(){
                         $servername = "localhost";
                         $username = "root";
                         $password = "";
-                        $database = "soul_society_inventory"; 
+                        $database = "solesocietyDB"; 
                     
                         $conn = new mysqli($servername, $username, $password, $database);
                     
@@ -349,7 +350,7 @@ function getName(){
                             $servername = "localhost";
                             $username = "root";
                             $password = "";
-                            $database = "soul_society_inventory"; 
+                            $database = "solesocietyDB"; 
                         
                             $conn = new mysqli($servername, $username, $password, $database);
                         
@@ -440,15 +441,20 @@ function getName(){
       </div>
 
       <div id="btnss">
+
+         <?php 
+            $_SESSION['productID'] = $_GET['myVariable'];
+          ?>
          
           <div id="carton"  class="box">
-            <form action="" method ="post">
+            <form action="Favorite.php" method ="post">
+            <input type = hidden name = "productID">
           <button class="button-30" role="button">Favorite</button>
           </form>
           </div>
           
           <div id="fav" class="box">
-          <form action="" method ="post">
+          <form action="AddToCart.php" method ="post">
           <button class="button-30" role="button">Add to cart</button>
           </form>
           </div>
@@ -484,3 +490,4 @@ function getName(){
 
 </body>
 </html>
+

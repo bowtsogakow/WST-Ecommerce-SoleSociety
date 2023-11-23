@@ -1,16 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <?php include "Headercopy.php";
+		AddHead(); 
+    ?>
+<style>
+
 * {
     margin: 0;
   }
   
-body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    padding-inline: 10%;
-    padding-block: 2rem;
-    background-color: #252422;
+  body{
+    background-color:#525050;
+    
+  }
+section.purchase_history{
+    padding:0 20px
 }
   
 img {
@@ -42,7 +47,7 @@ img {
 }
 
 .purchaseHistory-table{
-    border-radius: 0.9rem;
+    border-radius: 0.5rem;
     width: 100%;
     height: 1000px;
     margin: 0 auto;
@@ -87,7 +92,6 @@ img {
     border-color: var(--orange);
     border-radius: 1rem;
     cursor: pointer;
-    width: 100%;
 }
 .filter div h1{
     background: none;
@@ -103,7 +107,7 @@ img {
     border-style: solid;
     border-width: 1px;
     border-color: var(--orange);
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 0.3rem;
     padding-inline: 0.5rem;
     cursor: pointer;
@@ -186,3 +190,85 @@ img {
     border-radius: 100%;
 }
 
+<?php
+  AddCss(); 
+  ?>
+</style>
+</head>
+
+
+<header> 
+	<?php 
+  CartHeader();
+  ?> 
+</header>
+<body>
+  <section class="purchase_history">
+  <div class="title">
+        <ion-icon name="cart-outline"></ion-icon>
+        <p>PURCHASE HISTORY</p>
+    </div>
+    <div class="border">
+        <main class="purchaseHistory-table">
+            <div class="topMenu">
+                <div id="searchBar">
+                    <ion-icon name="search"></ion-icon>
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="filter">
+                    <p>Filter</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <p>Portially Receive Orders</p>
+                        <h1>&#10095;</h1>
+                    </div>
+                </div>
+                <div class="pages" style="display: flex; gap: 0.5rem;">
+                    <div  class="pages-button">
+                        <button>&#10094;</button>
+                        <p>1-10</p> 
+                        <button>&#10095;</button>
+                    </div>
+                    <div class="pages-all">
+                        <p>10/Page</p>
+                        <h1>&#10095;</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="label">
+                <div style="display: flex; gap: 1rem;">
+                    <input type="checkbox">
+                    <p>Date</p>
+                </div>
+                <p>Purchase Order</p>
+                <p>Delivery Date</p>
+                <p>Amount</p>
+                <ion-icon name="settings-outline"></ion-icon>
+            </div>
+            <div class="purchaseHistory-list">
+                <ol>
+                    <li class="list-item">
+                        <div style="display: flex; gap: 1rem;">
+                            <input type="checkbox">
+                            <p id="date">06/02/2023</p>
+                        </div>
+                        <p id="purchaseOrder">PO-00123456</p>
+                        <p id="deliveryDate">07/12/2023</p>
+                        <p id="amount">₱264</p>
+                        <label class="more-btn"><p></p></label>
+                    </li>
+                </ol>
+            </div>
+        </main>
+    </div>
+  </section>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+<footer>
+  <?php
+  AddFooter();
+  ?>
+</footer>
+</html>

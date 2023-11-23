@@ -28,6 +28,12 @@ body{
 }
 
 /* HEADER */
+
+ header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+ }
 header .first_header .row{
   display: flex;
   justify-content: space-between;
@@ -37,7 +43,6 @@ header .first_header .row{
     padding: 10px 40px;
     background-image: linear-gradient(to right,#252422 , #EB5E28);
     z-index: 1;
-    position: fixed;
     width: 100%;
   
   }
@@ -121,13 +126,44 @@ header .first_header .row{
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   } 
   header .first_header .dropdown_menu.open{
-    height: 140px;
+    height: max-content;
   }
   header .first_header .dropdown_menu li{
     padding:0.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  #accountDropDown{
+    cursor: pointer;
+  }
+  .dropdown-content {
+    visibility: hidden;
+    position: absolute;
+    top: 2rem;
+    
+    right: 0;
+    z-index: 1;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+    background: transparent;
+    backdrop-filter: blur(50px);
+    box-shadow: 3px 5px 10px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    width: max-content;
+  }
+  .dropdown-content.active {
+    visibility: visible;
   }
 
  /* header hidden */
@@ -235,7 +271,7 @@ header .first_header .row{
 
   /*SECTION HERO | SLIDESHOW */
   section.hero{
-    padding-top:70px;
+    padding-top: 70px;
     background-image: linear-gradient(to right,#252422 , #EB5E28);
   }
 section.hero .container{

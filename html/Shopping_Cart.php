@@ -3,13 +3,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-<?php include "Headercopy.php";
+    <link rel="stylesheet" href="../css/Style_Shopping_Cart.css">
+    <?php include "Headercopy.php";
 		AddHead(); 
     ?>
 
 <style> 
-
+header .first_header .row{
+ gap:1rem;}
 section .container{
   max-width: 1440px;
   margin: 0px auto;
@@ -80,9 +81,8 @@ section thead th{
   
 }
 section .quantity-btn {
-  margin-top: 45px;
-
-  display: flex;
+    margin-top: 118px;
+    display: flex;
 }
 section tr .total{
   text-align: center;
@@ -271,25 +271,58 @@ cursor: pointer;
 section.PlaceOrder .buttons .flex button:hover{
 background-color: #EB5E28;
 }
-main p{
+.parent p{
   text-align: center;
   color: #FDCE29;
   font-size: 50px;
   font-weight: bold;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  #accountDropDown{
+    cursor: pointer;
+  }
+  .dropdown-content {
+    visibility: hidden;
+    position: absolute;
+    top: 2rem;
+    
+    right: 0;
+    z-index: 1;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+    background: transparent;
+    backdrop-filter: blur(50px);
+    box-shadow: 3px 5px 10px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    width: max-content;
+  }
+  .dropdown-content.active {
+    visibility: visible;
+  }
+
+
+
 	<?php
-  AddCss(); 
+  echo AddCss(); 
   ?>
 </style> 
 </head> 
 
 <body>
 
-<header> 
-	<?php 
-  CartHeader();
-  ?> 
+<header>
+<?php
+CartHeader()
+
+?>
 </header>
 <main>
   <?php
@@ -299,7 +332,7 @@ main p{
       
     if($CartValue == 0 ){
 
-      echo "<p> No item found</p>";  
+      echo "<div class='parent'><p> No item found</p></div>";  
     }
 
 
@@ -310,6 +343,7 @@ main p{
         $productID[$i] = getProduct($CartValue[$i]); 
        
       }  
+    
       echo "<section class='car'>
     <div class='container'>
         <div class='row'>
@@ -526,27 +560,60 @@ main p{
       document.getElementById('placeOrder').style.display = 'none';
       document.getElementById('closeButton').style.display = 'none';
     }
-    
-    </script>";
 
+    const accountDropDown = document.getElementById('accountDropDown');
 
-    }
+    accountDropDown.addEventListener('click', () =>{
+      const dropdownContent = document.querySelector('.dropdown-content');
 
-    
-  ?>
+      if(!dropdownContent.classList.contains('active')) {
+        dropdownContent.classList.add('active');
+      }else {
+        dropdownContent.classList.remove('active');
+      }
+    });
 
+    const toggleBtn = document.getElementById('menuIcon');
+    const dropDownMenu = document.getElementById('dropDownMenu');
+
+    toggleBtn.addEventListener('click', ()=> {
+      if(dropDownMenu.classList.contains('open')) {
+        dropDownMenu.classList.remove('open');
+      }
+      else {
+        dropDownMenu.classList.add('open');
+      }
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const navigationType = performance.getEntriesByType('navigation')[0].type;
+  
+      if (navigationType === 'reload') {
+          closePlaceOrder();
+      }
+  });
+  
+  function showPlaceOrder() {
+      document.getElementById('placeOrder').style.display = 'block';
+      document.getElementById('closeButton').style.display = 'inline';
+  }
+  
+  function closePlaceOrder() {
+      document.getElementById('placeOrder').style.display = 'none';
+      document.getElementById('closeButton').style.display = 'none';
+  }
+  
+  
+    </script>"; }?>
 </main>
 <footer>
   <?php
-  AddFooter();
+  echo AddFooter();
   ?>
 </footer>
+
+<script src="../js/function.js"></script>
 </body>
 
 </html>
 
-
-
-
-
-
+  
