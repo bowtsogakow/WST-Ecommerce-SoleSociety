@@ -178,7 +178,7 @@ h1 {
         <section class="userprofile">
         <div class="profile-container">
       <div class="profile-info">
-        <img class="profile-image" src="William2x2.jpg" width="10%" />
+        <img class="profile-image" src="avatar.jpg" width="10%" />
         <div class="info">
           <div class="profile-field">
             <span class="field-label">Username:</span>
