@@ -335,7 +335,7 @@ if (sortOrder === "asc") {
             let itemsHTML = '';
             itemsHTML += `
                       
-                          <p>No Item FOund</p>
+                          <p>No Item Found</p>
                       
                   `;
                   if (errorMessage) {

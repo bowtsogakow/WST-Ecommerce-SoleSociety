@@ -5,7 +5,7 @@ body{
 #item{
     
     width: 93.2%;
-    margin-top: 50px;
+    margin-top: 140px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
@@ -19,36 +19,40 @@ height: 300px;
 }
 #right{
  
-    margin-left: 300px;
+    margin-left: 100px;
     width: 80%;
 }
 
-/* div{
 
-
-
-    border: solid 1px;
-    border-color: red;
-
-
-} */
 #parent{
 
     display: flex;
+   
     margin-bottom: 20px;
-    grid-gap: 10px;
+    
 }
 #filter{
-    width: 15%;
-    height: 90vh;
-    position: fixed;
+    width: 19%;
+    height: 115vh;
+    position: sticky;
+    margin-top: 75px;
     background-color: #403D39;
     border: 1px solid;
     padding: 20px;
+  z-index: 0;
     transition: transform 0.3s ease;
 }
+#footItem, #headerIto{
+    z-index: 1000;
+}
+.checkbox-wrapper-14 {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-
+.checkbox-column {
+    flex: 2; /* Adjust the width of each column as needed */
+}
   
 .numericInput{
  width: 70px;
@@ -63,17 +67,19 @@ height: 300px;
   
     justify-content: flex-end;
     display: flex;
-    position: fixed;
+    float: right; 
+    position:fixed;
     text-align: right;
-    width: 160vh;
+    width: 153vh;
     height: 40px;
+  margin-top: 75px;
     background-color: #FFFCF2;
 }
 
 #sortOrder{
    
-    width: 170px;
-
+    width: 200px;
+   
    
 }
 /* .custom-dropdown big{
@@ -152,10 +158,12 @@ p,label{
 
 }
 a{
-    display: block; 
+    /* display: block;  */
     color: #ffffff;
     text-decoration: none;
-}.product{
+}
+
+.product{
     background-color: #eb5e28;
 }#imageScr{
     background-color: #FFFCF2;

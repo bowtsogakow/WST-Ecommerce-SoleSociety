@@ -26,11 +26,17 @@
     <script src="item_js.js" defer></script>
 </body>
 </html> -->
-
+<?php session_start();?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php include "Headercopy.php";
+		AddHead(); 
+    ?>
+
+<style><?php AddCss();?></style>
+
     <title>Redirect Example</title>
     <link rel="stylesheet" href="../css/item_style.css">
     <link rel="stylesheet" href="../css/checkbox_style.css">
@@ -43,9 +49,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
+
 <body onload = "showItem();">
+
+
+ <header id+= "headerIto"><?php CartHeader();?></header>
     <div id="parent">
-     
+   
     <div id="filter">
     <div class="checkbox-wrapper-14">
         <div id="cateBrand">
@@ -98,8 +108,10 @@
             <input type="checkbox" id="skateboardingCheckbox" value="skateboarding" onchange="showItem()" class="switch">
             <label for="skateboardingCheckbox">skateboarding </label><br>
         </div>
-            <p class ="heading">Sizes</p>
- 
+        
+        <div id="sizebox">
+            
+        <p class ="heading">Sizes</p>
             <input type="checkbox" id="size3CB" value="size3" onchange="showItem()"class="switch">
            
             <label for="size3CB">  size3   </label><br>
@@ -130,6 +142,7 @@
            
             <input type="checkbox" id="size12CB" value="size12" onchange="showItem()"class="switch">
             <label for="size12CB"> size12 </label><br>
+            </div>
      </div>
 
         <label for="minPrice">Min Price:</label>
@@ -145,10 +158,7 @@
   
         <div id ="right">
             <div id = "sorting">
-                <div class="checkbox-wrapper-11">
-                    <input id="02-11" type="checkbox" name="r" value="2">
-                    <label for="02-11">Filter</label>
-                  </div>
+                
                 
                 
             <!-- <div class="custom-select"></div> -->
@@ -167,6 +177,12 @@
     
     </div>
  </div>
+
+ <footer id ="footItem">
+
+<?php AddFooter() ?>
+
+ </footer>
  <script src="../js/radio_item.js" defer></script>
     <script src="../js/auto_item.js" defer></script>
     <!-- <script src="getData.js" defer></script> -->

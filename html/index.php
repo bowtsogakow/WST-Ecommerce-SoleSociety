@@ -24,9 +24,10 @@ rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src=".https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="radio_item.js" defer></script>
   <title>Sole Society</title>
 </head>
-<body>
+<body onload ="showLanding()">
 
 
   <header>
@@ -119,10 +120,10 @@ rel="stylesheet">
             <div class="feature-products " data-aos="zoom-in" data-aos-duration="1000">
               <div class="product">
               <div class="product-image">
-             <a href=""><img src="../image/Dior/B25Runnerneaker.png" alt=""></a>
+             <a href="../html/item.php?myVariable=38"><img src="../image/Dior/B25Runnerneaker.png" alt=""></a>
               </div>
               <div class="product-name ">
-              <p>B25 Runner neaker</p>
+              <p>B25 Runner Sneaker</p>
               </div>
               <div class="product-catergory">
               <p>Men , Running</p>
@@ -133,21 +134,7 @@ rel="stylesheet">
             </div>
             <div class="product">
               <div class="product-image">
-               <a href=""><img src="../image/adidas/CENTENNIAL_85_LOW_SHOES.png "alt=""></a>
-              </div>
-              <div class="product-name">
-               <p>Centennial 85 Low Shoes </p>
-              </div>
-              <div class="product-catergory">
-             <p>Men , Women , Basketball</p>
-              </div>
-              <div class="product-price">
-               <p>₱5,300</p>
-              </div>
-            </div>
-            <div class="product">
-              <div class="product-image">
-                <a href=""><img src="../image/newbalance/2002R__Eclipse.png" alt=""></a>
+                <a href="../html/item.php?myVariable=30"><img src="../image/newbalance/2002R__Eclipse.png" alt=""></a>
               </div>
               <div class="product-name">
                 <p>2002R 'Eclipse'</p>
@@ -161,7 +148,7 @@ rel="stylesheet">
             </div>
             <div class="product">
               <div class="product-image">
-                <a href=""><img src="../image/vans/sk8hi.png" alt=""></a>
+                <a href="../html/item.php?myVariable=28"><img src="../image/vans/sk8hi.png" alt=""></a>
               </div>
               <div class="product-name">
                 <p>Sk8-Hi Shoe</p>
@@ -175,7 +162,7 @@ rel="stylesheet">
             </div>
             <div class="product">
               <div class="product-image">
-               <a href=""><img src="../image/nike/Nike_Air_Max_97.png" alt=""></a>
+               <a href="../html/item.php?myVariable=2"><img src="../image/nike/Nike_Air_Max_97.png" alt=""></a>
               </div>
               <div class="product-name">
                 <p>Nike Air Max 97</p>
@@ -189,7 +176,7 @@ rel="stylesheet">
             </div>
             <div class="product">
               <div class="product-image">
-              <a href=""><img src="../image/reebok/ReebokNanoX3.png" alt=""></a>
+              <a href="../html/item.php?myVariable=35"><img src="../image/reebok/ReebokNanoX3.png" alt=""></a>
               </div>
               <div class="product-name">
                 <p>Reebok Nano X3</p>
@@ -203,7 +190,7 @@ rel="stylesheet">
             </div>
             <div class="product">
               <div class="product-image">
-                <a href=""><img src="../image/Converse/Chuck_70.png" alt=""></a>
+                <a href="../html/item.php?myVariable=25"><img src="../image/Converse/Chuck_70.png" alt=""></a>
               </div>
               <div class="product-name">
                 <p>Chuck 70 </p>
@@ -224,7 +211,7 @@ rel="stylesheet">
             <div class="product-categories " data-aos="zoom-in" data-aos-duration="1000">
              <div class="product">
                 <div class="product-image">
-              <a href=""> <img src="../image/categories/men.jpg" alt=""></a>
+              <a href="Product_item.php?"> <img src="../image/categories/men.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
                   <p>Nike</p>
@@ -233,7 +220,7 @@ rel="stylesheet">
         
               <div class="product">
                 <div class="product-image">
-                 <a href=""><img src="../image//categories/women.jpg" alt=""></a>
+                 <a href="Product_item.php?"><img src="../image//categories/women.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
                <p>Women</p>
@@ -242,7 +229,7 @@ rel="stylesheet">
         
               <div class="product">
                 <div class="product-image">
-                <a href=""> <img src="../image/categories/kids.jpg" alt=""></a>
+                <a href="Product_item.php?"> <img src="../image/categories/kids.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
                <p>Kids</p>
@@ -250,7 +237,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                 <a href=""><img src="../image/categories/running.jpg" alt=""></a>
+                 <a href="Product_item.php?"><img src="../image/categories/running.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
                  <p>Running</p>
@@ -258,7 +245,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                <a href=""> <img src="../image/categories/basketball.jpg" alt=""></a>
+                <a href="Product_item.php?"> <img src="../image/categories/basketball.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
                  <p>Basketball</p>
@@ -267,7 +254,7 @@ rel="stylesheet">
               
               <div class="product">
                 <div class="product-image">
-                  <a href=""><img src="../image/categories/aesthetic.jpg" alt=""></a>
+                  <a href="Product_item.php?"><img src="../image/categories/aesthetic.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
                  <p>Asthetic</p>
@@ -275,7 +262,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-              <a href=""><img src="../image/categories/skateboarding.jpg" alt=""></a>
+              <a href="Product_item.php?"><img src="../image/categories/skateboarding.jpg" alt=""></a>
                 </div>
                 <div class="product-name">
                  <p>Skateboarding</p>
@@ -287,7 +274,7 @@ rel="stylesheet">
             <div class="product-brands " data-aos="zoom-in" data-aos-duration="1000">
               <div class="product">
                 <div class="product-image">
-                  <a href=""><img src="../image/brands/Adidas.png" alt=""></a>
+                  <a href="Product_item.php?"><img src="../image/brands/Adidas.png" alt=""></a>
                 </div>
                 <div class="product-name">
                   <p>Adidas</p>
@@ -295,7 +282,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                  <a href=""><img src="../image/brands/Dior.png" alt=""></a>
+                  <a href="Product_item.php?"><img src="../image/brands/Dior.png" alt=""></a>
                 </div>
                 <div class="product-name">
                   <p>Dior</p>
@@ -303,7 +290,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                  <a href=""><img src="../image/brands/Converse.png" alt=""></a>
+                  <a href="Product_item.php?"><img src="../image/brands/Converse.png" alt=""></a>
                 </div>
                 <div class="product-name">
                 <p>Converse</p>
@@ -311,7 +298,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                 <a href=""><img src="../image/brands/New-Balance.png" alt=""></a>
+                 <a href="Product_item.php?"><img src="../image/brands/New-Balance.png" alt=""></a>
                 </div>
                 <div class="product-name">
                  <p>New Balance</p>
@@ -319,7 +306,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                <a href=""> <img src="../image//brands/nike.png" alt=""></a>
+                <a href="Product_item.php?"> <img src="../image//brands/nike.png" alt=""></a>
                 </div>
                 <div class="product-name">
                  <p>Nike</p>
@@ -327,7 +314,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                  <a href=""><img src="../image/brands/Reebok.png" alt=""></a>
+                  <a href="Product_item.php?"><img src="../image/brands/Reebok.png" alt=""></a>
                 </div>
                 <div class="product-name">
                   <p>Reebok</p>
@@ -335,7 +322,7 @@ rel="stylesheet">
               </div>
               <div class="product">
                 <div class="product-image">
-                   <a href=""><img src="../image/brands/vans.png" alt=""></a>
+                   <a href="Product_item.php?"><img src="../image/brands/vans.png" alt=""></a>
                 </div>
                 <div class="product-name">
                   <p>Vans</p>
