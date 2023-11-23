@@ -1,0 +1,260 @@
+body{
+
+    background-color:#FFFCF2 ;
+}
+#item{
+    
+    width: 93.2%;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+    
+}
+.list,.product{
+width: 300px;
+height: 300px;
+}
+#right{
+ 
+    margin-left: 300px;
+    width: 80%;
+}
+
+/* div{
+
+
+
+    border: solid 1px;
+    border-color: red;
+
+
+} */
+#parent{
+
+    display: flex;
+    margin-bottom: 20px;
+    grid-gap: 10px;
+}
+#filter{
+    width: 15%;
+    height: 90vh;
+    position: fixed;
+    background-color: #403D39;
+    border: 1px solid;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+
+  
+.numericInput{
+ width: 70px;
+
+
+
+}
+#hide{
+    width:185px;
+}
+#sorting{
+  
+    justify-content: flex-end;
+    display: flex;
+    position: fixed;
+    text-align: right;
+    width: 160vh;
+    height: 40px;
+    background-color: #FFFCF2;
+}
+
+#sortOrder{
+   
+    width: 170px;
+
+   
+}
+/* .custom-dropdown big{
+    width: 185px;
+} */
+.heading{
+ margin:0px;
+    font-size: 1em;
+    color: white;
+}
+label{
+    font-size: .8em;
+    color: white;
+}
+p,label{
+ 
+    font-family:'Poppins', sans-serif;
+}
+
+
+
+
+
+/*para sa image */
+#shoe_img{
+    margin-top: 10px;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+
+    display: block; 
+    object-fit: cover;
+    width: 90%;
+    aspect-ratio: 4/3;
+}
+.product{
+    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    border: solid 2px red;
+    }
+    #nameName{
+        font-size: 1.2em;
+        line-height: 1;
+
+    }
+    #brandName{
+        margin-top: 5px;
+        font-size: 1em;
+        color:rgb(176, 166, 166);
+
+    }
+#brandName,#nameName,#priceName{
+    
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    font-family:'Poppins', sans-serif;
+
+}
+#text{
+    margin-right: 5%;
+    width: 95%;
+    height: 30%;
+}#text2{
+    width: 100%;
+  
+}
+#nameText{
+    width: 100%;
+    height: 40px;
+
+}
+a{
+    display: block; 
+    color: #ffffff;
+    text-decoration: none;
+}.product{
+    background-color: #eb5e28;
+}#imageScr{
+    background-color: #FFFCF2;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+
+    display: block; 
+    object-fit: cover;
+    width: 90%;
+    aspect-ratio: 4/3;
+}
+
+
+
+
+
+/* drop down*/
+select{
+
+    background-color: transparent;
+  }
+  .custom-select select {
+    display: none;
+  }
+  
+  .custom-select {
+    position: relative;
+    width: 150px; /* Set the width as needed */
+  }
+  
+  
+  
+  /* Custom dropdown */
+  .custom-dropdown {
+
+  
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px; /* demo only */
+  }
+  
+  .custom-dropdown select {
+    border: 0; /* Additional border removal for cross-browser consistency */
+    outline: none; /* Remove the default focus outline */
+    -webkit-appearance: none; /* Remove the default appearance in WebKit browsers */
+    -moz-appearance: none; /* Remove the default appearance in Firefox */
+    appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      padding: 8px;
+      font-size: 16px;
+      border: none; /* Remove borders */
+      border-radius: 0; /* Remove border-radius */
+      width: 100%;
+      cursor: pointer;
+      
+      background-color: transparent; 
+  }
+  
+  .custom-dropdown::before,
+  .custom-dropdown::after {
+    content: "";
+    position: absolute;
+    border:0;
+    pointer-events: none;
+  }
+  
+  .custom-dropdown::after { /*  Custom dropdown arrow */
+    font-family: FontAwesome;
+    content: ' \f078 '; /* Unicode character for a down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust the right spacing as needed */
+    transform: translateY(-50%);
+    pointer-events: none;
+    background-color: transparent; 
+  }
+  
+  .custom-dropdown::before { /*  Custom dropdown arrow cover */
+    background-color: transparent; 
+    border:0;
+    width: 2em;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    
+  }
+  
+  
+  
+  select::-ms-expand {
+      display: none;
+  }
+  .custom-dropdown select:focus {
+    border: 0; /* Remove the border on focus */
+    outline: none; /* Remove the default focus outline */
+  }
+  .custom-dropdown select::-ms-expand {
+    display: none;
+  }
