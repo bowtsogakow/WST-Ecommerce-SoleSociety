@@ -383,15 +383,33 @@ function getName(){
 
 
 <head>
-
+<?php include "Headercopy.php";
+		AddHead(); 
+    ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="../css/style_item.css">
-</head>
-<body>
 
+<style>
+  body{
+    background-color: #FFFCF2;
+  }
+  <?php
+  echo AddCss(); 
+  ?>
+</style>
+</head>
+<body  style ="background-color:#FFFCF2">
+<main>
+  <header>
+  <?php
+CartHeader();
+
+?>
+  </header>
+</main>
 <div id="parent">
         <div id ="name">
         <?php getName(); ?>
@@ -482,11 +500,16 @@ function getName(){
   </div> 
 
 </div>
+<footer id ="pooter">
+  <?php
+  echo AddFooter();
+  ?>
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- <script src="item_js.js"> </script> -->
 
-
+<script src="../js/function.js"></script>
 
 </body>
 </html>

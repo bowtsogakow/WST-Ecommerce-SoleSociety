@@ -547,7 +547,7 @@ CartHeader()
     </script>"; }?>
     
 </main>
-<footer>
+<footer id="pooter">
   <?php
   echo AddFooter();
   ?>
