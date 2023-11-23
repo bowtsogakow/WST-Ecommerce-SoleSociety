@@ -54,7 +54,6 @@ function AddCss(){
     align-items: center;
     }
     header .first_header {
-      position:fixed;
       padding: 10px 40px;
       background-image: linear-gradient(to right,#252422 , #EB5E28);
       width: 100%;
@@ -76,8 +75,8 @@ function AddCss(){
     header .first_header .flex .search img{
       position: absolute;
       width: 18px;
-      top: 19px;
-      left: 80px;
+      top: 15px;
+      left: 100px;
     }
     header .first_header .flex .search input{
       padding: 8px;

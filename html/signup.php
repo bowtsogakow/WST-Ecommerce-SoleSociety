@@ -184,8 +184,17 @@ rel="stylesheet">
               <input type="password" name = "password" id="inputPassword" required>
               <label>Password</label>
             </div>
+            <!--Confirm Password-->
+            <div class="input-box label-confirm-password">
+              <span class="icon icon-hide" id="hideConfirmPassword"><ion-icon name="eye-outline"></ion-icon></span>
+              <span class="icon icon-show" id="showConfirmPassword"><ion-icon name="eye-off-outline"></ion-icon></span>
+              <input type="password" name = "confirmPassword" id="confirmPassword" required>
+              <label>Confirm Password</label>
+           </div>
+
             <button type="submit" class="btn1">SIGN UP</button>
 
+            
          
 
       </form>
@@ -304,6 +313,11 @@ rel="stylesheet">
   const showPass = document.getElementById("showPassword");
   const hidePass = document.getElementById("hidePassword");
   const inputPassword = document.getElementById("inputPassword");
+
+  const showConfirmPass = document.getElementById("showConfirmPassword");
+  const hideConfirmPass = document.getElementById("hideConfirmPassword");
+  const confirmPass = document.getElementById("confirmPassword");
+
     
   showPass.addEventListener("click", () => {
     inputPassword.setAttribute("type", "text");
@@ -316,6 +330,20 @@ rel="stylesheet">
     showPass.style.visibility = "visible";
     hidePass.style.visibility = "hidden";
   });
+
+  showConfirmPass.addEventListener("click", () => {
+  confirmPass.setAttribute("type", "text");
+  showConfirmPass.style.visibility = "hidden";
+  hideConfirmPass.style.visibility = "visible";
+  });
+
+  hideConfirmPass.addEventListener("click", () => {
+  confirmPass.setAttribute("type", "password");
+  showConfirmPass.style.visibility = "visible";
+  hideConfirmPass.style.visibility = "hidden";
+  });
+
+  
 
   </script>
   
