@@ -10,7 +10,7 @@ body {
     font-size: 14px;
     padding-inline: 10%;
     padding-block: 2rem;
-    background-image: linear-gradient(to right,#252422 , #EB5E28);
+    background-color: #252422;
 }
   
 img {
@@ -87,6 +87,7 @@ img {
     border-color: var(--orange);
     border-radius: 1rem;
     cursor: pointer;
+    width: 100%;
 }
 .filter div h1{
     background: none;

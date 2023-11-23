@@ -44,3 +44,47 @@ toggleBtn.addEventListener('click', ()=> {
     dropDownMenu.classList.add('open');
   }
 });
+
+function toggleDropdown() {
+  var dropdown = document.getElementById("dropdownContent");
+  if (dropdown.style.display === "none") {
+    dropdown.style.display = "block";
+  } else {
+    dropdown.style.display = "none";
+  }
+}
+
+const accountDropDown = document.getElementById('accountDropDown');
+
+accountDropDown.addEventListener('click', () =>{
+  const dropdownContent = document.querySelector('.dropdown-content');
+
+  if(!dropdownContent.classList.contains('active')) {
+    dropdownContent.classList.add('active');
+  }else {
+    dropdownContent.classList.remove('active');
+  }
+});
+
+
+
+function toggleDropdownBurger() {
+  var dropdown = document.getElementById("dropdownContent-burger");
+  if (dropdown.style.display === "none") {
+    dropdown.style.display = "block";
+  } else {
+    dropdown.style.display = "none";
+  }
+}
+
+const accountDropDownBurger = document.getElementById('accountDropDown-burger');
+
+accountDropDownBurger.addEventListener('click', () =>{
+  const dropdownContentBurger = document.querySelector('.dropdown-content-burger');
+
+  if(!dropdownContentBurger.classList.contains('active')) {
+    dropdownContentBurger.classList.add('active');
+  }else {
+    dropdownContentBurger.classList.remove('active');
+  }
+});
