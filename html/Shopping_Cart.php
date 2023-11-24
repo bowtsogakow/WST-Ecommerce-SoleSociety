@@ -15,6 +15,7 @@ section .container{
   max-width: 1440px;
   margin: 0px auto;
 }
+
 section .container .row{
   color:#FFFCF2; 
 }
@@ -81,7 +82,7 @@ section thead th{
   
 }
 section .quantity-btn {
-    margin-top: 118px;
+    margin-top: 118px;+
     display: flex;
 }
 section tr .total{
@@ -196,44 +197,7 @@ footer{
   margin-top: 200px;
   position: relative;
 }
-/* section2 */
-section.PlaceOrder {
 
-  position: relative;
-  
-}
-section.PlaceOrder .container{
-max-width: 1200px;
-margin: 100px auto;
-width: 50%;
-color: #525050;
-background-color: #FFFCF2;
-padding: 20px;
-position: fixed;
-bottom: 20px;
-right: 100px;
-border-radius: 5px;
-border: 1px solid #525050;
-}
-section.PlaceOrder .buttons{
-  color: #525050;
-  display: grid;
-  gap: 0px;
-}
-
-section.PlaceOrder .paymentmethod{
-display: flex;
-justify-content: space-between;
-}
-section.PlaceOrder .paymentmethod .lick{
-  font-weight: bold;
-  color: #FDCE29;
-  cursor: pointer;
-}
-section.PlaceOrder .flex{
-  display: flex;
-  justify-content: space-between;
-}
 
 section.PlaceOrder  #closeButton {
   /* display: none; */
@@ -355,11 +319,10 @@ CartHeader()
                 <thead>
                     <tr>
                       <th class='Product'>Product</th>
-                        <th></th>
+                        <th>Product Name</th>
                         <th>Price</th>
-                        <th>Quantity</th>
                         <th class='total'>Total</th>
-                        <th><input type='checkbox' id='selectAll' onclick='toggleSelectAll(this)'></th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -381,66 +344,7 @@ CartHeader()
           
         </div>
     </div>
-</section>
-<section class='PlaceOrder' id='placeOrder'>
-<div class='row'>
-  <div class='container' >
-  <div class='close'>
-<span id='closeButton' onclick='closePlaceOrder()'>X</span>
-</div>
-       <div class='buttons'>
-       <div class='paymentmethod'>
-        <div class='Pm'>
-          <p>Payment Method:</p>
-        </div>
-        <div class='Cash'>
-          <p>Cash On Delivery</p>
-        </div>
-        <div class='lick'>
-        <p>CHANGE</p>
-        </div>
-       </div>
 
-      <div class='line'></div>
-
-       <div class='flex'>
-        <div class='total'>
-        <p>Subtotal:</p>
-        </div>
-        <div class='price'>
-          <p>&#8369;224</p>
-        </div>
-       </div>
-
-       <div class='line'></div>
-
-       <div class='flex'>
-        <div class='shippingtotal'>
-        <p>Shipping Subtotal:</p>
-        </div>
-        <div class='price'>
-          <p>&#8369;224</p>
-        </div>
-       </div>
-
-       <div class='line'></div>
-
-       <div class='flex'>
-        <div class='total'>
-        <p>Shipping Subtotal:</p>
-        </div>
-        <div class='boldprice'>
-          <h1>&#8369;224</h1>
-        </div>
-        <div class='button'>
-          <button>Place Order</button>
-        </div>
-       </div>
-       </div>
-  </div>
-  </div>
-
-</section>
 
     <script>
         const quantityInputs = document.querySelectorAll('.quantity');

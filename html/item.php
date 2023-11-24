@@ -505,7 +505,40 @@ CartHeader();
   echo AddFooter();
   ?>
 </footer>
+<script>
+  const toggleBtn = document.getElementById('menuIcon');
+const dropDownMenu = document.getElementById('dropDownMenu');
 
+toggleBtn.addEventListener('click', ()=> {
+  if(dropDownMenu.classList.contains('open')) {
+    dropDownMenu.classList.remove('open');
+  }
+  else {
+    dropDownMenu.classList.add('open');
+  }
+});
+
+function toggleDropdown() {
+  var dropdown = document.getElementById("dropdownContent");
+  if (dropdown.style.display === "none") {
+    dropdown.style.display = "block";
+  } else {
+    dropdown.style.display = "none";
+  }
+}
+
+const accountDropDown = document.getElementById('accountDropDown');
+
+accountDropDown.addEventListener('click', () =>{
+  const dropdownContent = document.querySelector('.dropdown-content');
+
+  if(!dropdownContent.classList.contains('active')) {
+    dropdownContent.classList.add('active');
+  }else {
+    dropdownContent.classList.remove('active');
+  }
+});
+</script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- <script src="item_js.js"> </script> -->
 

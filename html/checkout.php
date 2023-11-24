@@ -9,7 +9,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="function.js"></script>
 </head>
-
+<style>
+.quantity-btn {
+    margin-top: 118px;
+    display: flex;
+}
+ .quantity-btn input {
+    width: 30px;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color: #EB5E28;
+    color: #FFFCF2;
+}
+</style>
 <body>
 
         <?php 
@@ -17,9 +30,8 @@
           $product = []; 
           if(isset($_SESSION['ID'])){
             $ID = $_POST['productID'];
-            $qty = $_POST['quantity2']; 
             $product = getProductInfo($ID); 
-            
+            $qty = $_POST['quantity1']; 
 
           }
           else if (!isset($_SESSION['ID'])){
@@ -64,6 +76,7 @@
             <?php
               checkOutRow($product, $qty); 
             ?>
+            
               <button id="checkout" onclick="selectPaymentOption('other')">Checkout</button>
           </form>
 
@@ -79,7 +92,9 @@
           <button type="button" id="continueToCheckout" onclick="continueToCheckout()">Continue to Checkout</button>
         </form>
       </div>
-
+          <script>
+            
+          </script>
 
 </body>
 </html>

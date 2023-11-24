@@ -1,3 +1,4 @@
+<?php session_start(); ?>.
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,9 +7,16 @@
     ?>
     
     <style>
-        
+        header .first_header{
+          position: sticky;
+          top: 0;
+        }
         section.favorite{
-            padding:20px;
+         
+            margin-top: 80px;
+        }
+        section.favorite .container{
+          padding: 20px;
         }
         section.favorite .headingname{
        text-align: center;
@@ -101,19 +109,32 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><img src="../image/newbalance/2002R__Eclipse.png"></td>
-                <td>Product 1</td>
-                <td>&#8369;10.99</td>
-                <td><button class="btn btn-delete" onclick="removeFavorite(this)">Remove</button></td>
-            </tr>
-            <tr>
-                <td><img src="../image/newbalance/2002R__Eclipse.png"></td>
-                <td>Product 2</td>
-                <td>&#8369;19.99</td>
-                <td><button class="btn btn-delete" onclick="removeFavorite(this)">Remove</button></td>
-            </tr>
-            
+           
+            <?php 
+                include "DBQuery.php"; 
+                
+                $List = getList_Favorite($_SESSION["ID"]); 
+
+                if($List == 0 ){
+
+                    echo "<div class='parent'><p> No item found</p></div>";  
+                  }
+
+                else {
+                    $count = count($List); 
+                    $productID = []; 
+                    for ($i = 0; $i < $count; $i++){
+                    $productID[$i] = getProductFavorite($List[$i]); 
+                    }
+                    $numberID = count($productID);
+                    for($a = 0; $a < $numberID; $a++){
+
+                        $product = getProductInfo($productID[$a]); 
+                        favoriteRow($product); 
+                    }
+                    }     
+                
+            ?>
         </tbody>
     </div>
     </table>
@@ -127,6 +148,39 @@ echo AddFooter();
     
 </body>
 <script>
+    const toggleBtn = document.getElementById('menuIcon');
+const dropDownMenu = document.getElementById('dropDownMenu');
+
+toggleBtn.addEventListener('click', ()=> {
+  if(dropDownMenu.classList.contains('open')) {
+    dropDownMenu.classList.remove('open');
+  }
+  else {
+    dropDownMenu.classList.add('open');
+  }
+});
+
+function toggleDropdown() {
+  var dropdown = document.getElementById("dropdownContent");
+  if (dropdown.style.display === "none") {
+    dropdown.style.display = "block";
+  } else {
+    dropdown.style.display = "none";
+  }
+}
+
+const accountDropDown = document.getElementById('accountDropDown');
+
+accountDropDown.addEventListener('click', () =>{
+  const dropdownContent = document.querySelector('.dropdown-content');
+
+  if(!dropdownContent.classList.contains('active')) {
+    dropdownContent.classList.add('active');
+  }else {
+    dropdownContent.classList.remove('active');
+  }
+});
+
         var deleteButtons = document.querySelectorAll('.btn-delete');
         for (var i = 0; i < deleteButtons.length; i++) {
             deleteButtons[i].addEventListener('click', function() {

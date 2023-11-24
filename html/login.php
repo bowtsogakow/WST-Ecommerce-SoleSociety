@@ -90,7 +90,9 @@
   </main>
 
 <footer>
-  
+<?php
+  echo AddFooter();
+  ?>
 </footer>
 <script>
   AOS.init();

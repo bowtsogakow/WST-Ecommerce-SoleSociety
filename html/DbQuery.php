@@ -327,7 +327,7 @@ function getProductFavorite($ID){
     global $conn; 
     
     
-    $sql_query = "SELECT productID FROM favorite WHERE productID = ?"; 
+    $sql_query = "SELECT productID FROM favorite WHERE fave_id = ?"; 
     $stmt = $conn->prepare($sql_query); 
     $stmt->bind_param('s', $ID); 
     $stmt->execute(); 
@@ -348,12 +348,8 @@ function addRow($product){
         <td><img class='item-img' src='../WSTShoesNoBackground/$product[2]' alt='Apple'></td>
         <td class='name'>$product[0]</td>
         <td class='price'>&#8369; $product[1]</td>
-        <td class='quantity-btn'>
-            <button onclick='updateQuantity(this, -1)'>-</button>
-            <input value='1' min='1' id= 'quantity2' name = 'quantity2' class='quantity' form='checkoutForm' required>
-            <button onclick='updateQuantity(this, 1)'>+</button>
-        </td>
-        <td class='total'>---</td>
+       
+        
         <form id = 'checkoutForm' action = 'checkout.php' method = POST> 
        
         <input type = hidden name = productID value = $product[3]>
@@ -379,11 +375,10 @@ function addRow($product){
   function checkOutRow($Product, $Qty){
         $Total = $Product[1] * $Qty; 
         echo "<div class='grid-item grid-item-1'>$Product[0]  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  $Qty</div>
-        <div class='grid-item grid-item-1'>Price:  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp&nbsp &nbsp &nbsp$Product[1]</div>    
-        <div class='grid-item total'>Total  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  $Total </div> ";
+        <div class='grid-item grid-item-1'>Price:  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp$Product[1]</div>    
+        <div class='grid-item total'>Total  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  $Product[1] </div> ";
          
   }
-
 
 
 ?>
