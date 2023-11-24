@@ -136,6 +136,7 @@ rel="stylesheet">
       }
       else if ($status_code == 0){
         $status_message = "User successfully created"; 
+        $_SESSION['ID'] = login($username, $email, $password); 
       }
       echo "<script>  alert('$status_message'); window.location.href = 'index.php';</script>";
     }

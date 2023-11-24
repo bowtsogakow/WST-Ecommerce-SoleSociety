@@ -6,7 +6,7 @@
            
             $ID = $_SESSION['productID']; 
             $path = "item.php?myVariable=" . urlencode($ID);
-            $status = addtoFavorite($_SESSION["ID"], $_SESSION["productID"]); 
+            $status = addtoCart($_SESSION["ID"], $_SESSION["productID"]); 
 
             if($status == 0){
                 $status_message = "Item already added to Cart";  

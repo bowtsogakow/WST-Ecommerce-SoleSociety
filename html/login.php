@@ -1,5 +1,6 @@
 <?php 
   session_start();  
+  include "Headercopy.php"; 
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +92,7 @@
 
 <footer>
 <?php
-  echo AddFooter();
+   AddFooter();
   ?>
 </footer>
 <script>

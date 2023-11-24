@@ -31,7 +31,7 @@
           if(isset($_SESSION['ID'])){
             $ID = $_POST['productID'];
             $product = getProductInfo($ID); 
-            $qty = $_POST['quantity1']; 
+         
 
           }
           else if (!isset($_SESSION['ID'])){
@@ -72,9 +72,9 @@
           <p id="qty">Qty</p>
           <div class="grid-container">
 
-          <form Action = Method = > 
+          <form action="checkout-server.php" Method ="" > 
             <?php
-              checkOutRow($product, $qty); 
+              checkOutRow($product); 
             ?>
             
               <button id="checkout" onclick="selectPaymentOption('other')">Checkout</button>
@@ -92,6 +92,11 @@
           <button type="button" id="continueToCheckout" onclick="continueToCheckout()">Continue to Checkout</button>
         </form>
       </div>
+
+      <form action="checkout-server.php">
+
+
+</form>
           <script>
             
           </script>

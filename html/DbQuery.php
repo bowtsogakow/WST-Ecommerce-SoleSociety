@@ -372,9 +372,9 @@ function addRow($product){
 
   }
 
-  function checkOutRow($Product, $Qty){
-        $Total = $Product[1] * $Qty; 
-        echo "<div class='grid-item grid-item-1'>$Product[0]  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  $Qty</div>
+  function checkOutRow($Product){
+        $Total = $Product[1]; 
+        echo "<div class='grid-item grid-item-1'>$Product[0]  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  1</div>
         <div class='grid-item grid-item-1'>Price:  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp$Product[1]</div>    
         <div class='grid-item total'>Total  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  $Product[1] </div> ";
          

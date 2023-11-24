@@ -703,7 +703,7 @@ function CartHeader(){
               <div id="dropdownContent" class="dropdown-content">
                 <a href="purchase_history.php">Purchase History</a>
                 <a href="userprofile.php">User Profile</a>
-                <a href="#">Log Out</a>
+                <a href="logout.php">Log Out</a>
               </div>
             </div>
           </li>
@@ -727,5 +727,15 @@ function CartHeader(){
      </div>
   </section>
   ' ;
+}
+
+function favoriteRow($product){
+           echo "<tr>
+                <td><img src='../WSTShoesNoBackground/$product[2]' style='width:200px;'></td>
+                <td> $product[0]</td>
+                <td>&#8369; $product[1]</td>
+                2
+            </tr>";
+
 }
 ?>
