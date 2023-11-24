@@ -82,7 +82,7 @@ section thead th{
   
 }
 section .quantity-btn {
-    margin-top: 118px;+
+    margin-top: 118px;
     display: flex;
 }
 section tr .total{
@@ -284,7 +284,23 @@ background-color: #EB5E28;
 
 <header>
 <?php
-CartHeader()
+if(isset($_SESSION['ID'])){
+      
+  if ($_SESSION['ID'] < 0) {
+    LoginHeader();
+} else if ($_SESSION['ID'] == 0) {
+    adminHeader();
+} else if ($_SESSION['ID'] > 0) {
+    CartHeader();
+}
+
+}
+
+else if (!isset($_SESSION['ID'])){
+    LoginHeader();
+
+  
+}
 
 ?>
 </header>

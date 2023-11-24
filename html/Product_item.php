@@ -35,7 +35,12 @@
 		AddHead(); 
     ?>
 
-<style><?php AddCss();?></style>
+<style>
+
+<?php AddCss();
+
+
+?></style>
 
     <title>Redirect Example</title>
     <link rel="stylesheet" href="../css/item_style.css">
@@ -53,7 +58,27 @@
 <body onload = "showItem();">
 
 
- <header id+= "headerIto"><?php CartHeader();?></header>
+ <header id+= "headerIto"><?php 
+ 
+ if(isset($_SESSION['ID'])){
+      
+  if ($_SESSION['ID'] < 0) {
+    LoginHeader();
+} else if ($_SESSION['ID'] == 0) {
+    adminHeader();
+} else if ($_SESSION['ID'] > 0) {
+    CartHeader();
+}
+
+}
+
+else if (!isset($_SESSION['ID'])){
+    LoginHeader();
+
+  
+}
+ 
+ ?></header>
     <div id="parent">
    
     <div id="filter">

@@ -738,4 +738,63 @@ function favoriteRow($product){
             </tr>";
 
 }
+
+
+
+function adminHeader(){
+  echo '
+  <section class="first_header">
+  <div class="container">
+    <div class="row">
+      <div class="flex">
+       <div class="logo">
+        <img src="../image/icons/logo2.png" alt="">
+       </div>
+         <div class="search">
+
+        <form>
+            <input type="text" name="search" 
+            placeholder="Search products here" autocomplete="off" spellcheck="false">
+          </form>
+
+      </div>
+      </div>
+      <div class="link">
+        <ul>
+          <li><a href="admin.php">Sales</a></li>
+          <li><a href="Product_item.php">Shop</a></li>
+          <li><a href="Shopping_Cart.php">Cart</a></li>
+          <li><a href="faverite.php">Favorite</a></li>
+          <li>
+            <div class="dropdown">
+              <a id="accountDropDown">Account</a>
+              <div id="dropdownContent" class="dropdown-content">
+                <a href="purchase_history.php">Purchase History</a>
+                <a href="userprofile.php">User Profile</a>
+                <a href="logout.php">Log Out</a>
+              </div>
+            </div>
+          </li>
+          
+         </ul>
+         <div class="menu-icon" id="menuIcon">
+          <i class="bx bx-menu bx-md"></i>
+         </div>
+      </div>
+      </div>
+     </div>
+     <div class="dropdown_menu" id="dropDownMenu">
+      <ul>
+          <li><a href="">Shop</a></li>
+          <li><a href="">Cart</a></li>
+          <li><a href="">Favorite</a></li>
+          <li><a href="">Purchase History</a></li>
+          <li><a href="userprofile.php">User Profile</a></li>
+          <li><a href="">Log Out</a></li>
+       </ul>
+     </div>
+  </section>
+  ' ;
+}
+
 ?>

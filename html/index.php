@@ -59,15 +59,14 @@ rel="stylesheet">
     <?php 
     if(isset($_SESSION['ID'])){
       
-      if($_SESSION['ID']<= 0) {
-        
+      if ($_SESSION['ID'] < 0) {
         LoginHeader();
-      }
-
-      else if ($_SESSION['ID'] > 0) {
+    } else if ($_SESSION['ID'] == 0) {
+        adminHeader();
+    } else if ($_SESSION['ID'] > 0) {
         CartHeader();
-     
-      }
+    }
+    
     }
 
     else if (!isset($_SESSION['ID'])){
